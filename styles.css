@@ -244,6 +244,12 @@ img { max-width: 100%; display: block; }
   align-items: flex-start;
 }
 .logo-card img { height: 34px; width: auto; max-width: 100%; object-fit: contain; }
+.logo-card img[src$=".svg"] {
+  background: var(--dark);
+  padding: 8px 12px;
+  border-radius: 6px;
+  box-sizing: content-box;
+}
 .logo-card .cname { font-size: 15px; font-weight: 500; }
 .logo-card .ctag { font-size: 13px; color: var(--gray); }
 .cohort-label { font-size: 22px; margin: 56px 0 0; }

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact Us | Deep Tech Security Accelerator</title>
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="./"><img src="./images/mLPfdt1UXnucnOv0Lomkl5x9o.png" alt="DTS Accelerator"></a>
+    <nav>
+      <ul class="main-nav">
+        <li><a href="./#about">About</a></li>
+        <li><a href="./#program">Program</a></li>
+        <li><a href="./#team">Team</a></li>
+        <li><a href="./alumni.html">Alumni</a></li>
+        <li><a href="./contact-us.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-primary" href="https://forms.gle/N11L7pqNefYQdxHu8" target="_blank" rel="noopener">Apply</a>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <h1>Accelerate Your Innovation Journey With DTSA</h1>
+  <p>Have a question or want to learn more about DTSA? Send us a message and our team will get back to you shortly.</p>
+</section>
+
+<section class="contact-section">
+  <div class="contact-card">
+    <form id="contact-form" action="./thank-you.html">
+      <div class="form-field">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" required>
+      </div>
+      <div class="form-field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required>
+      </div>
+      <div class="form-field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      <button class="btn btn-primary" type="submit" style="width:100%">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a class="logo" href="./"><img src="./images/mLPfdt1UXnucnOv0Lomkl5x9o.png" alt="DTS Accelerator" style="height:20px;margin-bottom:16px"></a>
+        <p>333 Ravenswood Ave</p>
+        <p>Menlo Park, CA 94025, USA</p>
+        <p>+1 (650) 387-4412</p>
+        <a href="mailto:team@dts-accelerator.com">team@dts-accelerator.com</a>
+      </div>
+      <div class="footer-col">
+        <h4>Accelerator</h4>
+        <a href="./#about">About</a>
+        <a href="./#program">Program</a>
+        <a href="./#team">Team</a>
+        <a href="./alumni.html">Alumni</a>
+        <a href="./contact-us.html">Contact us</a>
+      </div>
+      <div class="footer-col">
+        <h4>Social Links</h4>
+        <a href="https://www.linkedin.com/company/deep-tech-security-accelerator/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.facebook.com/dtsaccelerator" target="_blank" rel="noopener">Facebook</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>All right reserved. DTSA, 2026</span>
+      <a href="#">Back to Top</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('contact-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var name = document.getElementById('name').value;
+  var email = document.getElementById('email').value;
+  var message = document.getElementById('message').value;
+  var body = encodeURIComponent(message + "\n\nFrom: " + name + " (" + email + ")");
+  window.location.href = "mailto:team@dts-accelerator.com?subject=Website%20enquiry&body=" + body;
+  setTimeout(function () { window.location.href = "./thank-you.html"; }, 300);
+});
+</script>
+
+</body>
+</html>

@@ -84,6 +84,22 @@ img { max-width: 100%; display: block; }
 }
 .main-nav a:hover { color: var(--green-dark); }
 .header-actions { display: flex; align-items: center; gap: 20px; }
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 4px;
+  font-size: 13px;
+}
+.lang-switch a {
+  padding: 4px 10px;
+  border-radius: 999px;
+  color: var(--gray);
+}
+.lang-switch a.active { background: var(--ink); color: var(--white); }
+.lang-switch a:not(.active):hover { color: var(--ink); }
 .btn {
   display: inline-flex;
   align-items: center;

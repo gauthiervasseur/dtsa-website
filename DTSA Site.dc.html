@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>DTSA — Deep Tech Security Accelerator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #0c0f12; color: #e8eaec; font-family: "IBM Plex Sans", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  * { box-sizing: border-box; }
+  a { color: oklch(0.78 0.13 78); text-decoration: none; }
+  a:hover { color: oklch(0.86 0.11 78); }
+  h1, h2, h3, h4 { font-family: Archivo, system-ui, sans-serif; margin: 0; letter-spacing: -0.02em; text-wrap: balance; }
+  p { margin: 0; text-wrap: pretty; }
+  ::selection { background: oklch(0.78 0.13 78); color: #0c0f12; }
+  @keyframes dtsaRise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  @keyframes dtsaTick { from { background-position: 0 0; } to { background-position: -240px 0; } }
+</style>
+</helmet>
+
+<div style="min-height: 100vh; display: flex; flex-direction: column; overflow-x: hidden">
+
+  <header style="position: sticky; top: 0; z-index: 60; background: rgba(12,15,18,0.86); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(232,234,236,0.1)">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 0 32px; height: 74px; display: flex; align-items: center; gap: 32px">
+      <a href="#/" style="display: flex; align-items: baseline; gap: 9px; color: #e8eaec">
+        <span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 21px; letter-spacing: 0.02em">DTSA</span>
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: rgba(232,234,236,0.45); text-transform: uppercase" data-t>Menlo Park · Kyiv</span>
+      </a>
+      <nav style="margin-left: auto; display: flex; align-items: center; gap: 26px; font-size: 14px; font-weight: 500">
+        <a href="#/program" data-nav="program" style="color: rgba(232,234,236,0.72)" data-t>Program</a>
+        <a href="#/cohorts" data-nav="cohorts" style="color: rgba(232,234,236,0.72)" data-t>Cohorts</a>
+        <a href="#/events" data-nav="events" style="color: rgba(232,234,236,0.72)" data-t>Events</a>
+        <a href="#/alumni" data-nav="alumni" style="color: rgba(232,234,236,0.72)" data-t>Alumni</a>
+        <a href="#/team" data-nav="team" style="color: rgba(232,234,236,0.72)" data-t>Team</a>
+        <a href="#/contact" data-nav="contact" style="color: rgba(232,234,236,0.72)" data-t>Contact</a>
+      </nav>
+      <div style="display: flex; align-items: center; gap: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; border: 1px solid rgba(232,234,236,0.16); border-radius: 999px; padding: 4px">
+        <button type="button" data-langbtn="en" onClick="{{ setEn }}" style="border: 0; background: transparent; color: rgba(232,234,236,0.5); padding: 4px 9px; border-radius: 999px; cursor: pointer; font: inherit">EN</button>
+        <button type="button" data-langbtn="uk" onClick="{{ setUk }}" style="border: 0; background: transparent; color: rgba(232,234,236,0.5); padding: 4px 9px; border-radius: 999px; cursor: pointer; font: inherit">УКР</button>
+      </div>
+      <a href="#/apply" style="background: oklch(0.78 0.13 78); color: #0c0f12; font-weight: 600; font-size: 14px; padding: 11px 20px; border-radius: 4px" style-hover="background: oklch(0.86 0.11 78); color: #0c0f12" data-t>Apply</a>
+    </div>
+  </header>
+
+  <main style="flex: 1">
+
+  <!-- ============ HOME ============ -->
+  <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+  <div>
+    <section style="position: relative; border-bottom: 1px solid rgba(232,234,236,0.1); overflow: hidden">
+      <div style="position: absolute; inset: 0; background: radial-gradient(120% 90% at 82% 8%, rgba(96,165,215,0.16), transparent 60%), repeating-linear-gradient(90deg, rgba(232,234,236,0.045) 0 1px, transparent 1px 84px)"></div>
+      <div style="position: relative; max-width: 1240px; margin: 0 auto; padding: 96px 32px 78px; animation: dtsaRise 0.6s ease both">
+        <div style="display: inline-flex; align-items: center; gap: 10px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: oklch(0.78 0.13 78); border: 1px solid rgba(214,168,72,0.35); padding: 7px 13px; border-radius: 999px">
+          <span style="width: 6px; height: 6px; border-radius: 999px; background: oklch(0.78 0.13 78)"></span>
+          <span data-t>Cohort 3 · Residency January 2027 · Applications open</span>
+        </div>
+        <h1 style="margin-top: 30px; font-size: 74px; line-height: 0.96; font-weight: 800; max-width: 17ch">
+          <span data-t>Battlefield-validated technology,</span>
+          <span style="color: oklch(0.75 0.12 232); display: block" data-t>scaled into allied markets.</span>
+        </h1>
+        <p style="margin-top: 26px; max-width: 62ch; font-size: 20px; line-height: 1.55; color: rgba(232,234,236,0.78)" data-t>The Deep Tech Security Accelerator takes defense and dual-use startups that already work in the field and gives them six months of execution support, a Silicon Valley residency with SRI International, and direct routes to buyers, primes and capital across the U.S., Europe and the Indo-Pacific.</p>
+        <div style="margin-top: 38px; display: flex; flex-wrap: wrap; gap: 14px">
+          <a href="#/apply" style="background: oklch(0.78 0.13 78); color: #0c0f12; font-weight: 600; font-size: 15px; padding: 15px 26px; border-radius: 4px" style-hover="background: oklch(0.86 0.11 78)" data-t>Apply to Cohort 3</a>
+          <a href="#/contact" style="border: 1px solid rgba(232,234,236,0.24); color: #e8eaec; font-weight: 600; font-size: 15px; padding: 15px 26px; border-radius: 4px" style-hover="border-color: rgba(232,234,236,0.6)" data-t>Talk to the team</a>
+        </div>
+        <div style="margin-top: 56px; display: flex; flex-wrap: wrap; gap: 10px 30px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.06em; color: rgba(232,234,236,0.5)">
+          <span data-t>TRL 6+ only</span>
+          <span data-t>Hosted with SRI International</span>
+          <span data-t>Fully funded for Ukrainian teams</span>
+          <span data-t>42 startups to date</span>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-bottom: 1px solid rgba(232,234,236,0.1); background: #10141a">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 74px 32px">
+        <h2 style="font-size: 13px; font-family: 'IBM Plex Mono', monospace; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(232,234,236,0.45)" data-t>Choose your track</h2>
+        <div style="margin-top: 28px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px">
+
+          <div style="border: 1px solid rgba(232,234,236,0.14); border-radius: 8px; padding: 30px; display: flex; flex-direction: column; gap: 14px; background: linear-gradient(180deg, rgba(232,234,236,0.04), transparent)" style-hover="border-color: rgba(214,168,72,0.55)">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; color: oklch(0.78 0.13 78)" data-t>01 / STARTUP</span>
+            <h3 style="font-size: 27px; line-height: 1.1" data-t>You have tech that already survives contact with reality.</h3>
+            <p style="font-size: 15px; line-height: 1.6; color: rgba(232,234,236,0.7)" data-t>Join the accelerator: two weeks in Silicon Valley, six months of execution support, and introductions that turn validation into contracts.</p>
+            <a href="#/apply" style="margin-top: auto; font-weight: 600; font-size: 15px" data-t>Submit an application →</a>
+          </div>
+
+          <div style="border: 1px solid rgba(232,234,236,0.14); border-radius: 8px; padding: 30px; display: flex; flex-direction: column; gap: 14px; background: linear-gradient(180deg, rgba(232,234,236,0.04), transparent)" style-hover="border-color: rgba(120,180,230,0.55)">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; color: oklch(0.75 0.12 232)" data-t>02 / INVESTOR</span>
+            <h3 style="font-size: 27px; line-height: 1.1" data-t>You want deal flow that has been stress-tested, not pitched.</h3>
+            <p style="font-size: 15px; line-height: 1.6; color: rgba(232,234,236,0.7)" data-t>Get early access to operationally validated companies, diligence alongside our technical mentors, and stay wired into the defense ecosystem on both continents.</p>
+            <a href="#/contact" style="margin-top: auto; font-weight: 600; font-size: 15px; color: oklch(0.75 0.12 232)" data-t>Book an intro call →</a>
+          </div>
+
+          <div style="border: 1px solid rgba(232,234,236,0.14); border-radius: 8px; padding: 30px; display: flex; flex-direction: column; gap: 14px; background: linear-gradient(180deg, rgba(232,234,236,0.04), transparent)" style-hover="border-color: rgba(232,234,236,0.45)">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; color: rgba(232,234,236,0.62)" data-t>03 / DONOR</span>
+            <h3 style="font-size: 27px; line-height: 1.1" data-t>You want free societies equipped to defend themselves.</h3>
+            <p style="font-size: 15px; line-height: 1.6; color: rgba(232,234,236,0.7)" data-t>Donor support pays for Ukrainian founders to take part. Every seat funded is a security capability moved from the front line into allied hands.</p>
+            <a href="#/donate" style="margin-top: auto; font-weight: 600; font-size: 15px; color: #e8eaec" data-t>Support the program →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-bottom: 1px solid rgba(232,234,236,0.1)">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 74px 32px">
+        <h2 style="font-size: 40px; max-width: 24ch" data-t>Real teams. Real traction. Outcomes measured after the program, not during it.</h2>
+        <div style="margin-top: 44px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(232,234,236,0.14); border: 1px solid rgba(232,234,236,0.14)">
+          <div style="background: #0c0f12; padding: 30px">
+            <div style="font-family: Archivo, sans-serif; font-size: 46px; font-weight: 700; color: oklch(0.78 0.13 78)">$30M+</div>
+            <div style="margin-top: 8px; font-size: 14px; color: rgba(232,234,236,0.62)" data-t>Raised post-program</div>
+          </div>
+          <div style="background: #0c0f12; padding: 30px">
+            <div style="font-family: Archivo, sans-serif; font-size: 46px; font-weight: 700; color: oklch(0.78 0.13 78)">42</div>
+            <div style="margin-top: 8px; font-size: 14px; color: rgba(232,234,236,0.62)" data-t>Startups accelerated</div>
+          </div>
+          <div style="background: #0c0f12; padding: 30px">
+            <div style="font-family: Archivo, sans-serif; font-size: 46px; font-weight: 700; color: oklch(0.78 0.13 78)">80+</div>
+            <div style="margin-top: 8px; font-size: 14px; color: rgba(232,234,236,0.62)" data-t>Connections across the U.S. defense ecosystem</div>
+          </div>
+          <div style="background: #0c0f12; padding: 30px">
+            <div style="font-family: Archivo, sans-serif; font-size: 46px; font-weight: 700; color: oklch(0.75 0.12 232)">DIU</div>
+            <div style="margin-top: 8px; font-size: 14px; color: rgba(232,234,236,0.62)" data-t>Partnerships secured</div>
+          </div>
+          <div style="background: #0c0f12; padding: 30px">
+            <div style="font-family: Archivo, sans-serif; font-size: 46px; font-weight: 700; color: oklch(0.75 0.12 232)">NATO</div>
+            <div style="margin-top: 8px; font-size: 14px; color: rgba(232,234,236,0.62)" data-t>Aligned government orders</div>
+          </div>
+          <div style="background: #0c0f12; padding: 30px">
+            <div style="font-family: Archivo, sans-serif; font-size: 46px; font-weight: 700; color: oklch(0.75 0.12 232)">2</div>
+            <div style="margin-top: 8px; font-size: 14px; color: rgba(232,234,236,0.62)" data-t>Cohorts completed, cross-collaborating</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-bottom: 1px solid rgba(232,234,236,0.1); background: #10141a">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 74px 32px; display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 60px; align-items: start">
+        <div>
+          <h2 style="font-size: 40px" data-t>What makes DTSA different</h2>
+          <p style="margin-top: 20px; font-size: 17px; line-height: 1.6; color: rgba(232,234,236,0.7)" data-t>We accelerate companies that are already building, not companies still imagining. Everything in the program is aimed at one thing: getting a validated capability adopted by an allied customer.</p>
+          <a href="#/program" style="display: inline-block; margin-top: 26px; font-weight: 600; font-size: 15px" data-t>See the full program →</a>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 1px; background: rgba(232,234,236,0.14)">
+          <div style="background: #10141a; padding: 24px 0 24px 26px; border-left: 2px solid oklch(0.78 0.13 78)">
+            <h3 style="font-size: 20px" data-t>Battle-tested cohorts only</h3>
+            <p style="margin-top: 8px; font-size: 15px; line-height: 1.6; color: rgba(232,234,236,0.68)" data-t>No idea-stage noise. Frontline-derived learning loops and direct access to Ukrainian founders and engineers working under the world's most demanding conditions.</p>
+          </div>
+          <div style="background: #10141a; padding: 24px 0 24px 26px; border-left: 2px solid oklch(0.75 0.12 232)">
+            <h3 style="font-size: 20px" data-t>Structured ecosystem access</h3>
+            <p style="margin-top: 8px; font-size: 15px; line-height: 1.6; color: rgba(232,234,236,0.68)" data-t>Curated introductions to primes, investors, allied stakeholders and R&amp;D partners, with technical, commercial and regulatory guidance in the same room.</p>
+          </div>
+          <div style="background: #10141a; padding: 24px 0 24px 26px; border-left: 2px solid rgba(232,234,236,0.35)">
+            <h3 style="font-size: 20px" data-t>Six months, not one week</h3>
+            <p style="margin-top: 8px; font-size: 15px; line-height: 1.6; color: rgba(232,234,236,0.68)" data-t>Sustained, scale-oriented engagement built around deployment, partnerships and market expansion long after the residency ends.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-bottom: 1px solid rgba(232,234,236,0.1)">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 74px 32px">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 24px; flex-wrap: wrap">
+          <h2 style="font-size: 40px" data-t>Hear it from the founders</h2>
+          <a href="#/alumni" style="font-weight: 600; font-size: 15px" data-t>Meet our alumni →</a>
+        </div>
+        <div style="margin-top: 32px; display: grid; grid-template-columns: 1.4fr 1fr; gap: 20px">
+          <div style="aspect-ratio: 16/9; border: 1px solid rgba(232,234,236,0.14); border-radius: 6px; background: repeating-linear-gradient(135deg, rgba(232,234,236,0.05) 0 10px, transparent 10px 20px); display: flex; align-items: center; justify-content: center">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; color: rgba(232,234,236,0.5)">[ COHORT I HIGHLIGHT FILM ]</span>
+          </div>
+          <div style="display: grid; grid-template-rows: 1fr 1fr; gap: 20px">
+            <div style="border: 1px solid rgba(232,234,236,0.14); border-radius: 6px; background: repeating-linear-gradient(135deg, rgba(232,234,236,0.05) 0 10px, transparent 10px 20px); display: flex; align-items: center; justify-content: center">
+              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.1em; color: rgba(232,234,236,0.5)">[ RESIDENCY PHOTO ]</span>
+            </div>
+            <div style="border: 1px solid rgba(232,234,236,0.14); border-radius: 6px; background: repeating-linear-gradient(135deg, rgba(232,234,236,0.05) 0 10px, transparent 10px 20px); display: flex; align-items: center; justify-content: center">
+              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.1em; color: rgba(232,234,236,0.5)">[ DEMO DAY PHOTO ]</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-bottom: 1px solid rgba(232,234,236,0.1); background: #10141a">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 60px 32px; display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 60px; align-items: center">
+        <div>
+          <h2 style="font-size: 13px; font-family: 'IBM Plex Mono', monospace; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(232,234,236,0.45)" data-t>Our partners</h2>
+          <p style="margin-top: 16px; font-size: 17px; line-height: 1.6; color: rgba(232,234,236,0.7)" data-t>DTSA runs in strategic partnership with SRI International, with support from the Consulate General of Ukraine in San Francisco.</p>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px">
+          <div style="height: 84px; border: 1px solid rgba(232,234,236,0.14); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: rgba(232,234,236,0.5)">[ SRI ]</div>
+          <div style="height: 84px; border: 1px solid rgba(232,234,236,0.14); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: rgba(232,234,236,0.5)">[ MFA UA SF ]</div>
+          <div style="height: 84px; border: 1px solid rgba(232,234,236,0.14); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: rgba(232,234,236,0.5)">[ LOGO ]</div>
+        </div>
+      </div>
+    </section>
+  </div>
+  </sc-if>
+
+  <!-- ============ PROGRAM ============ -->
+  <sc-if value="{{ isProgram }}" hint-placeholder-val="{{ false }}">
+  <div>
+    <section style="border-bottom: 1px solid rgba(232,234,236,0.1)">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 74px 32px 60px">
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: oklch(0.78 0.13 78)" data-t>Program</span>
+        <h1 style="margin-top: 16px; font-size: 60px; line-height: 1; max-width: 20ch" data-t>Six months engineered around adoption.</h1>
+        <p style="margin-top: 22px; max-width: 62ch; font-size: 19px; line-height: 1.6; color: rgba(232,234,236,0.75)" data-t>One week of onboarding, two weeks of in-person immersion in Silicon Valley, then six months of mentored execution with milestone tracking. Built for the realities of defense procurement, export control and allied market entry.</p>
+      </div>
+    </section>
+
+    <section style="border-bottom: 1px solid rgba(232,234,236,0.1); background: #10141a">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 66px 32px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px">
+        <div style="border: 1px solid rgba(232,234,236,0.14); border-radius: 8px; padding: 28px">
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; color: oklch(0.78 0.13 78)" data-t>PHASE 1 · 1 WEEK</span>
+          <h3 style="margin-top: 14px; font-size: 24px" data-t>Online onboarding</h3>
+          <p style="margin-top: 10px; font-size: 15px; line-height: 1.6; color: rgba(232,234,236,0.68)" data-t>Align on goals, map your target markets and buyers, and arrive at the residency with the groundwork already done.</p>
+        </div>
+        <div style="border: 1px solid rgba(232,234,236,0.14); border-radius: 8px; padding: 28px">
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; color: oklch(0.78 0.13 78)" data-t>PHASE 2 · 2 WEEKS</span>
+          <h3 style="margin-top: 14px; font-size: 24px" data-t>Silicon Valley residency</h3>
+          <p style="margin-top: 10px; font-size: 15px; line-height: 1.6; color: rgba(232,234,236,0.68)" data-t>Working immersion hosted with SRI International: positioning, curated meetings with primes and investors, workshops, and ecosystem access.</p>
+        </div>
+        <div style="border: 1px solid rgba(232,234,236,0.14); border-radius: 8px; padding: 28px">
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; color: oklch(0.78 0.13 78)" data-t>PHASE 3 · 6 MONTHS</span>
+          <h3 style="margin-top: 14px; font-size: 24px" data-t>Remote execution &amp; mentoring</h3>
+          <p style="margin-top: 10px; font-size: 15px; line-height: 1.6; color: rgba(232,234,236,0.68)" data-t>Expert mentoring, partner and investor follow-ups, and milestone tracking until the pipeline is real.</p>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-bottom: 1px solid rgba(232,234,236,0.1)">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 66px 32px">
+        <h2 style="font-size: 36px" data-t>What you gain</h2>
+        <div style="margin-top: 30px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px">
+          <div>
+            <h3 style="font-size: 20px; color: oklch(0.75 0.12 232)" data-t>Defense immersion</h3>
+            <p style="margin-top: 10px; font-size: 15px; line-height: 1.6; color: rgba(232,234,236,0.68)" data-t>Positioning work, partner meetings and a high-trust gateway into the Valley's defense ecosystem.</p>
+          </div>
+          <div>
+            <h3 style="font-size: 20px; color: oklch(0.75 0.12 232)" data-t>Founder-level execution</h3>
+            <p style="margin-top: 10px; font-size: 15px; line-height: 1.6; color: rgba(232,234,236,0.68)" data-t>Strategy, narrative, GTM, negotiation, export compliance and leadership, taught for defense and dual-use conditions.</p>
+          </div>
+          <div>
+            <h3 style="font-size: 20px; color: oklch(0.75 0.12 232)" data-t>Transatlantic and Indo-Pacific bridge</h3>
+            <p style="margin-top: 10px; font-size: 15px; line-height: 1.6; color: rgba(232,234,236,0.68)" data-t>Structured access to primes, defense investors, allied stakeholders, operators, mentors and R&amp;D partners.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-bottom: 1px solid rgba(232,234,236,0.1); background: #10141a">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 66px 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 50px">
+        <div>
+          <h2 style="font-size: 30px" data-t>Who should attend</h2>
+          <p style="margin-top: 14px; font-size: 16px; line-height: 1.6; color: rgba(232,234,236,0.7)" data-t>DTSA is built for founders and senior leaders who can make strategic decisions in the room and act on them afterwards.</p>
+          <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 16px">
+            <span style="color: rgba(232,234,236,0.85)" data-t>Founder / CEO</span>
+            <span style="color: rgba(232,234,236,0.85)" data-t>CTO involved in strategic partnerships</span>
+            <span style="color: rgba(232,234,236,0.85)" data-t>Chief Strategy or Business Development lead</span>
+          </div>
+          <p style="margin-top: 18px; font-size: 15px; line-height: 1.6; color: rgba(232,234,236,0.55)" data-t>The participant must be able to represent the technology and its operational validation. If the attendee cannot make decisions, the program will not deliver its value.</p>
+        </div>
+        <div>
+          <h2 style="font-size: 30px" data-t>Fees and coverage</h2>
+          <div style="margin-top: 18px; border: 1px solid rgba(214,168,72,0.4); border-radius: 8px; padding: 24px">
+            <h3 style="font-size: 19px; color: oklch(0.78 0.13 78)" data-t>Ukrainian startups</h3>
+            <p style="margin-top: 8px; font-size: 15px; line-height: 1.6; color: rgba(232,234,236,0.72)" data-t>Fully covered by the Ukrainian Alumni Fund and supporting donors. Participants cover travel and accommodation only.</p>
+          </div>
+          <div style="margin-top: 16px; border: 1px solid rgba(232,234,236,0.14); border-radius: 8px; padding: 24px">
+            <h3 style="font-size: 19px" data-t>All other applicants</h3>
+            <p style="margin-top: 8px; font-size: 15px; line-height: 1.6; color: rgba(232,234,236,0.72)" data-t>$8,250 for the two-week residency plus six months of mentoring and ecosystem access, in addition to travel and accommodation.</p>
+          </div>
+          <a href="#/apply" style="display: inline-block; margin-top: 20px; background: oklch(0.78 0.13 78); color: #0c0f12; font-weight: 600; font-size: 15px; padding: 14px 24px; border-radius: 4px" data-t>Start an application</a>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-bottom: 1px solid rgba(232,234,236,0.1)">
+      <div style="max-width: 900px; margin: 0 auto; padding: 66px 32px">
+        <h2 style="font-size: 36px" data-t>FAQ</h2>
+        <div style="margin-top: 26px; display: flex; flex-direction: column; gap: 1px; background: rgba(232,234,236,0.14)">
+          <div style="background: #0c0f12; padding: 20px 0">
+            <h3 style="font-size: 17px" data-t>What does “battle-tested” mean here?</h3>
+            <p style="margin-top: 8px; font-size: 15px; line-height: 1.6; color: rgba(232,234,236,0.68)" data-t>Operational validation in real-world or combat-like environments — not lab tests or demos.</p>
+          </div>
+          <div style="background: #0c0f12; padding: 20px 0">
+            <h3 style="font-size: 17px" data-t>What stage is required?</h3>
+            <p style="margin-top: 8px; font-size: 15px; line-height: 1.6; color: rgba(232,234,236,0.68)" data-t>We select TRL 6+ teams. Exceptionally, TRL 4–5 companies with completed operational validation are considered.</p>
+          </div>
+          <div style="background: #0c0f12; padding: 20px 0">
+            <h3 style="font-size: 17px" data-t>Can dual-use startups apply?</h3>
+            <p style="margin-top: 8px; font-size: 15px; line-height: 1.6; color: rgba(232,234,236,0.68)" data-t>Yes. DTSA is built for both defense and dual-use technologies.</p>
+          </div>
+          <div style="background: #0c0f12; padding: 20px 0">
+            <h3 style="font-size: 17px" data-t>Which markets does DTSA focus on?</h3>
+            <p style="margin-top: 8px; font-size: 15px; line-height: 1.6; color: rgba(232,234,236,0.68)" data-t>The United States, Europe and the Indo-Pacific allied markets.</p>
+          </div>
+          <div style="background: #0c0f12; padding: 20px 0">
+            <h3 style="font-size: 17px" data-t>How is sensitive information handled?</h3>
+            <p style="margin-top: 8px; font-size: 15px; line-height: 1.6; color: rgba(232,234,236,0.68)" data-t>Share only what is required for evaluation and partnership conversations. Nothing is passed on without your consent.</p>
+          </div>
+          <div style="background: #0c0f12; padding: 20px 0">
+            <h3 style="font-size: 17px" data-t>How do we apply?</h3>
+            <p style="margin-top: 8px; font-size: 15px; line-height: 1.6; color: rgba(232,234,236,0.68)" data-t>Complete the application form on the Apply page. Selection runs on a rolling basis until the cohort is full.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  </sc-if>
+
+  <!-- ============ COHORTS ============ -->
+  <sc-if value="{{ isCohorts }}" hint-placeholder-val="{{ false }}">
+  <div>
+    <section style="border-bottom: 1px solid rgba(232,234,236,0.1)">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 74px 32px 56px">
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: oklch(0.78 0.13 78)" data-t>Cohorts</span>
+        <h1 style="margin-top: 16px; font-size: 60px; line-height: 1; max-width: 22ch" data-t>The DTSA cohorts we host.</h1>
+        <p style="margin-top: 22px; max-width: 60ch; font-size: 19px; line-height: 1.6; color: rgba(232,234,236,0.75)" data-t>Each cohort is small, selected for operational validation, and run end to end by the DTSA team in Menlo Park. Below: where each one stands.</p>
+      </div>
+    </section>
+
+    <section style="border-bottom: 1px solid rgba(232,234,236,0.1); background: #10141a">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 60px 32px; display: flex; flex-direction: column; gap: 20px">
+
+        <div style="border: 1px solid rgba(214,168,72,0.45); border-radius: 8px; padding: 32px; display: grid; grid-template-columns: 200px 1fr auto; gap: 32px; align-items: start; background: linear-gradient(120deg, rgba(214,168,72,0.07), transparent 55%)">
+          <div>
+            <div style="font-family: Archivo, sans-serif; font-size: 40px; font-weight: 800; color: oklch(0.78 0.13 78)" data-t>Cohort 3</div>
+            <div style="margin-top: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: oklch(0.78 0.13 78)" data-t>OPEN FOR APPLICATIONS</div>
+          </div>
+          <div>
+            <h3 style="font-size: 24px" data-t>Residency: January 2027, Menlo Park</h3>
+            <p style="margin-top: 10px; font-size: 16px; line-height: 1.6; color: rgba(232,234,236,0.72)" data-t>If your technology is validated in real conditions and you are ready to scale into allied markets, this is your execution track. Applications are reviewed on a rolling basis; the cohort closes when it is full.</p>
+            <div style="margin-top: 16px; display: flex; flex-wrap: wrap; gap: 8px 22px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: rgba(232,234,236,0.55)">
+              <span data-t>TRL 6+</span>
+              <span data-t>Defense &amp; dual-use</span>
+              <span data-t>Ukrainian seats fully funded</span>
+            </div>
+          </div>
+          <a href="#/apply" style="background: oklch(0.78 0.13 78); color: #0c0f12; font-weight: 600; font-size: 15px; padding: 14px 22px; border-radius: 4px; white-space: nowrap" data-t>Apply now</a>
+        </div>
+
+        <div style="border: 1px solid rgba(232,234,236,0.14); border-radius: 8px; padding: 32px; display: grid; grid-template-columns: 200px 1fr; gap: 32px; align-items: start">
+          <div>
+            <div style="font-family: Archivo, sans-serif; font-size: 40px; font-weight: 800; color: rgba(232,234,236,0.9)" data-t>Cohort 2</div>
+            <div style="margin-top: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: rgba(232,234,236,0.5)" data-t>COMPLETED</div>
+          </div>
+          <div>
+            <h3 style="font-size: 22px" data-t>Second BEAST Mode cohort</h3>
+            <p style="margin-top: 10px; font-size: 16px; line-height: 1.6; color: rgba(232,234,236,0.72)" data-t>A deeper bench of autonomy, EW and sensing teams, with a residency built around procurement pathways and allied government orders. Alumni continue to work across cohorts.</p>
+          </div>
+        </div>
+
+        <div style="border: 1px solid rgba(232,234,236,0.14); border-radius: 8px; padding: 32px; display: grid; grid-template-columns: 200px 1fr; gap: 32px; align-items: start">
+          <div>
+            <div style="font-family: Archivo, sans-serif; font-size: 40px; font-weight: 800; color: rgba(232,234,236,0.9)" data-t>Cohort 1</div>
+            <div style="margin-top: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: rgba(232,234,236,0.5)" data-t>COMPLETED</div>
+          </div>
+          <div>
+            <h3 style="font-size: 22px" data-t>The founding cohort</h3>
+            <p style="margin-top: 10px; font-size: 16px; line-height: 1.6; color: rgba(232,234,236,0.72)" data-t>The first group of battlefield-validated Ukrainian and allied teams to run the full DTSA track — and the group whose results set the standard for everything since.</p>
+            <a href="#/alumni" style="display: inline-block; margin-top: 14px; font-weight: 600; font-size: 15px" data-t>See the alumni →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-bottom: 1px solid rgba(232,234,236,0.1)">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 60px 32px">
+        <h2 style="font-size: 30px" data-t>How selection works</h2>
+        <div style="margin-top: 26px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px">
+          <div style="border-top: 2px solid oklch(0.78 0.13 78); padding-top: 16px">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: rgba(232,234,236,0.5)">01</span>
+            <h3 style="margin-top: 8px; font-size: 18px" data-t>Application</h3>
+            <p style="margin-top: 8px; font-size: 14px; line-height: 1.6; color: rgba(232,234,236,0.65)" data-t>Company, technology, TRL and evidence of field validation.</p>
+          </div>
+          <div style="border-top: 2px solid oklch(0.78 0.13 78); padding-top: 16px">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: rgba(232,234,236,0.5)">02</span>
+            <h3 style="margin-top: 8px; font-size: 18px" data-t>Technical review</h3>
+            <p style="margin-top: 8px; font-size: 14px; line-height: 1.6; color: rgba(232,234,236,0.65)" data-t>Our mentors and advisors assess operational proof and readiness to scale.</p>
+          </div>
+          <div style="border-top: 2px solid oklch(0.78 0.13 78); padding-top: 16px">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: rgba(232,234,236,0.5)">03</span>
+            <h3 style="margin-top: 8px; font-size: 18px" data-t>Founder interview</h3>
+            <p style="margin-top: 8px; font-size: 14px; line-height: 1.6; color: rgba(232,234,236,0.65)" data-t>A conversation with the decision-maker who will attend the residency.</p>
+          </div>
+          <div style="border-top: 2px solid oklch(0.78 0.13 78); padding-top: 16px">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: rgba(232,234,236,0.5)">04</span>
+            <h3 style="margin-top: 8px; font-size: 18px" data-t>Offer and onboarding</h3>
+            <p style="margin-top: 8px; font-size: 14px; line-height: 1.6; color: rgba(232,234,236,0.65)" data-t>Selected teams confirm participation and begin the onboarding week.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  </sc-if>
+
+  <!-- ============ EVENTS ============ -->
+  <sc-if value="{{ isEvents }}" hint-placeholder-val="{{ false }}">
+  <div>
+    <section style="border-bottom: 1px solid rgba(232,234,236,0.1)">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 74px 32px 56px">
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: oklch(0.75 0.12 232)" data-t>Events</span>
+        <h1 style="margin-top: 16px; font-size: 60px; line-height: 1; max-width: 22ch" data-t>Where to find us next.</h1>
+        <p style="margin-top: 22px; max-width: 60ch; font-size: 19px; line-height: 1.6; color: rgba(232,234,236,0.75)" data-t>Cohort milestones, demo days and the defense conferences where DTSA teams show up. If you want to meet at any of these, write to us.</p>
+      </div>
+    </section>
+
+    <section style="border-bottom: 1px solid rgba(232,234,236,0.1); background: #10141a">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 60px 32px">
+        <h2 style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(232,234,236,0.45)" data-t>Featured</h2>
+        <div style="margin-top: 20px; border: 1px solid rgba(214,168,72,0.45); border-radius: 8px; padding: 40px; background: linear-gradient(120deg, rgba(214,168,72,0.08), transparent 60%); display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center">
+          <div>
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.12em; color: oklch(0.78 0.13 78)" data-t>JANUARY 2027 · MENLO PARK, CA</div>
+            <h3 style="margin-top: 12px; font-size: 40px; line-height: 1.05; max-width: 24ch" data-t>Cohort 3 Silicon Valley Residency</h3>
+            <p style="margin-top: 14px; max-width: 58ch; font-size: 16px; line-height: 1.6; color: rgba(232,234,236,0.72)" data-t>Two weeks of positioning, curated meetings and workshops hosted with SRI International, closing with a demo day for investors, primes and allied stakeholders.</p>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 10px">
+            <a href="#/apply" style="background: oklch(0.78 0.13 78); color: #0c0f12; font-weight: 600; font-size: 15px; padding: 14px 24px; border-radius: 4px; text-align: center; white-space: nowrap" data-t>Apply to attend</a>
+            <a href="#/contact" style="border: 1px solid rgba(232,234,236,0.24); color: #e8eaec; font-weight: 600; font-size: 15px; padding: 14px 24px; border-radius: 4px; text-align: center; white-space: nowrap" data-t>Request an invitation</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-bottom: 1px solid rgba(232,234,236,0.1)">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 60px 32px">
+        <h2 style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(232,234,236,0.45)" data-t>Calendar</h2>
+        <div style="margin-top: 22px; display: flex; flex-direction: column; gap: 1px; background: rgba(232,234,236,0.14); border-top: 1px solid rgba(232,234,236,0.14); border-bottom: 1px solid rgba(232,234,236,0.14)">
+
+          <div style="background: #0c0f12; padding: 24px 4px; display: grid; grid-template-columns: 150px 1fr 190px 120px; gap: 24px; align-items: center">
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: oklch(0.78 0.13 78)" data-t>Rolling · 2026</div>
+            <div>
+              <h3 style="font-size: 19px" data-t>Cohort 3 applications</h3>
+              <p style="margin-top: 6px; font-size: 14px; color: rgba(232,234,236,0.6)" data-t>Reviewed as they arrive, closing once the cohort is full.</p>
+            </div>
+            <div style="font-size: 14px; color: rgba(232,234,236,0.6)" data-t>Online</div>
+            <a href="#/apply" style="font-size: 14px; font-weight: 600" data-t>Apply →</a>
+          </div>
+
+          <div style="background: #0c0f12; padding: 24px 4px; display: grid; grid-template-columns: 150px 1fr 190px 120px; gap: 24px; align-items: center">
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: oklch(0.78 0.13 78)" data-t>Nov 2026</div>
+            <div>
+              <h3 style="font-size: 19px" data-t>Investor briefing: allied deal flow</h3>
+              <p style="margin-top: 6px; font-size: 14px; color: rgba(232,234,236,0.6)" data-t>A closed session on what battlefield validation means for diligence. Date to confirm.</p>
+            </div>
+            <div style="font-size: 14px; color: rgba(232,234,236,0.6)" data-t>Online / San Francisco</div>
+            <a href="#/contact" style="font-size: 14px; font-weight: 600" data-t>Request seat →</a>
+          </div>
+
+          <div style="background: #0c0f12; padding: 24px 4px; display: grid; grid-template-columns: 150px 1fr 190px 120px; gap: 24px; align-items: center">
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: oklch(0.78 0.13 78)" data-t>Jan 2027</div>
+            <div>
+              <h3 style="font-size: 19px" data-t>Cohort 3 residency &amp; demo day</h3>
+              <p style="margin-top: 6px; font-size: 14px; color: rgba(232,234,236,0.6)" data-t>Two weeks on site, closing with the cohort demo day.</p>
+            </div>
+            <div style="font-size: 14px; color: rgba(232,234,236,0.6)" data-t>Menlo Park, CA</div>
+            <a href="#/cohorts" style="font-size: 14px; font-weight: 600" data-t>Details →</a>
+          </div>
+
+          <div style="background: #0c0f12; padding: 24px 4px; display: grid; grid-template-columns: 150px 1fr 190px 120px; gap: 24px; align-items: center">
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: rgba(232,234,236,0.45)" data-t>2027 · TBC</div>
+            <div>
+              <h3 style="font-size: 19px" data-t>Defense conferences with our teams</h3>
+              <p style="margin-top: 6px; font-size: 14px; color: rgba(232,234,236,0.6)" data-t>Alumni exhibit across European and U.S. defense events. Send us your event list and we will confirm attendance.</p>
+            </div>
+            <div style="font-size: 14px; color: rgba(232,234,236,0.6)" data-t>Europe / U.S.</div>
+            <a href="#/contact" style="font-size: 14px; font-weight: 600" data-t>Ask us →</a>
+          </div>
+        </div>
+        <p style="margin-top: 20px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: rgba(232,234,236,0.4)" data-t>Entries marked “to confirm” are placeholders — send the real dates and we will publish them.</p>
+      </div>
+    </section>
+  </div>
+  </sc-if>
+
+  <!-- ============ ALUMNI ============ -->
+  <sc-if value="{{ isAlumni }}" hint-placeholder-val="{{ false }}">
+  <div>
+    <section style="border-bottom: 1px solid rgba(232,234,236,0.1)">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 74px 32px 56px">
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: oklch(0.78 0.13 78)" data-t>Alumni</span>
+        <h1 style="margin-top: 16px; font-size: 60px; line-height: 1; max-width: 20ch" data-t>42 companies, two cohorts, one network.</h1>
+        <p style="margin-top: 22px; max-width: 60ch; font-size: 19px; line-height: 1.6; color: rgba(232,234,236,0.75)" data-t>DTSA alumni have raised more than $30M after the program, secured DIU partnerships and NATO-aligned government orders, and keep collaborating across cohorts.</p>
+      </div>
+    </section>
+
+    <section style="border-bottom: 1px solid rgba(232,234,236,0.1); background: #10141a">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 56px 32px">
+        <h2 style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(232,234,236,0.45)" data-t>Alumni companies</h2>
+        <div style="margin-top: 20px; display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px">
+          <div style="height: 82px; border: 1px solid rgba(232,234,236,0.12); border-radius: 6px; background: repeating-linear-gradient(135deg, rgba(232,234,236,0.04) 0 8px, transparent 8px 16px)"></div>
+          <div style="height: 82px; border: 1px solid rgba(232,234,236,0.12); border-radius: 6px; background: repeating-linear-gradient(135deg, rgba(232,234,236,0.04) 0 8px, transparent 8px 16px)"></div>
+          <div style="height: 82px; border: 1px solid rgba(232,234,236,0.12); border-radius: 6px; background: repeating-linear-gradient(135deg, rgba(232,234,236,0.04) 0 8px, transparent 8px 16px)"></div>
+          <div style="height: 82px; border: 1px solid rgba(232,234,236,0.12); border-radius: 6px; background: repeating-linear-gradient(135deg, rgba(232,234,236,0.04) 0 8px, transparent 8px 16px)"></div>
+          <div style="height: 82px; border: 1px solid rgba(232,234,236,0.12); border-radius: 6px; background: repeating-linear-gradient(135deg, rgba(232,234,236,0.04) 0 8px, transparent 8px 16px)"></div>
+          <div style="height: 82px; border: 1px solid rgba(232,234,236,0.12); border-radius: 6px; background: repeating-linear-gradient(135deg, rgba(232,234,236,0.04) 0 8px, transparent 8px 16px)"></div>
+          <div style="height: 82px; border: 1px solid rgba(232,234,236,0.12); border-radius: 6px; background: repeating-linear-gradient(135deg, rgba(232,234,236,0.04) 0 8px, transparent 8px 16px)"></div>
+          <div style="height: 82px; border: 1px solid rgba(232,234,236,0.12); border-radius: 6px; background: repeating-linear-gradient(135deg, rgba(232,234,236,0.04) 0 8px, transparent 8px 16px)"></div>
+          <div style="height: 82px; border: 1px solid rgba(232,234,236,0.12); border-radius: 6px; background: repeating-linear-gradient(135deg, rgba(232,234,236,0.04) 0 8px, transparent 8px 16px)"></div>
+          <div style="height: 82px; border: 1px solid rgba(232,234,236,0.12); border-radius: 6px; background: repeating-linear-gradient(135deg, rgba(232,234,236,0.04) 0 8px, transparent 8px 16px)"></div>
+          <div style="height: 82px; border: 1px solid rgba(232,234,236,0.12); border-radius: 6px; background: repeating-linear-gradient(135deg, rgba(232,234,236,0.04) 0 8px, transparent 8px 16px)"></div>
+          <div style="height: 82px; border: 1px solid rgba(232,234,236,0.12); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: rgba(232,234,236,0.45)">+30</div>
+        </div>
+        <p style="margin-top: 16px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: rgba(232,234,236,0.4)" data-t>Drop alumni logos into these slots and we will label each company and cohort.</p>
+      </div>
+    </section>
+
+    <section style="border-bottom: 1px solid rgba(232,234,236,0.1)">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 60px 32px">
+        <h2 style="font-size: 36px" data-t>What alumni say</h2>
+        <div style="margin-top: 28px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px">
+          <div style="border: 1px solid rgba(232,234,236,0.14); border-radius: 8px; padding: 30px">
+            <p style="font-family: Archivo, sans-serif; font-size: 22px; line-height: 1.35; color: rgba(232,234,236,0.9)" data-t>“The residency turned a working product into a procurement conversation. We left with named buyers, not advice.”</p>
+            <div style="margin-top: 20px; display: flex; align-items: center; gap: 12px">
+              <div style="width: 40px; height: 40px; border-radius: 999px; border: 1px solid rgba(232,234,236,0.16); background: repeating-linear-gradient(135deg, rgba(232,234,236,0.06) 0 6px, transparent 6px 12px)"></div>
+              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: rgba(232,234,236,0.5)">[ FOUNDER · COHORT I ]</span>
+            </div>
+          </div>
+          <div style="border: 1px solid rgba(232,234,236,0.14); border-radius: 8px; padding: 30px">
+            <p style="font-family: Archivo, sans-serif; font-size: 22px; line-height: 1.35; color: rgba(232,234,236,0.9)" data-t>“Six months of follow-through is the part nobody else does. That is where the round and the pilots came from.”</p>
+            <div style="margin-top: 20px; display: flex; align-items: center; gap: 12px">
+              <div style="width: 40px; height: 40px; border-radius: 999px; border: 1px solid rgba(232,234,236,0.16); background: repeating-linear-gradient(135deg, rgba(232,234,236,0.06) 0 6px, transparent 6px 12px)"></div>
+              <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: rgba(232,234,236,0.5)">[ FOUNDER · COHORT II ]</span>
+            </div>
+          </div>
+        </div>
+        <p style="margin-top: 18px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: rgba(232,234,236,0.4)" data-t>Placeholder quotes — replace with approved founder statements before publishing.</p>
+      </div>
+    </section>
+  </div>
+  </sc-if>
+
+  <!-- ============ TEAM ============ -->
+  <sc-if value="{{ isTeam }}" hint-placeholder-val="{{ false }}">
+  <div>
+    <section style="border-bottom: 1px solid rgba(232,234,236,0.1)">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 74px 32px 56px">
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: oklch(0.78 0.13 78)" data-t>Team</span>
+        <h1 style="margin-top: 16px; font-size: 60px; line-height: 1; max-width: 20ch" data-t>Meet the DTSA team.</h1>
+        <p style="margin-top: 22px; max-width: 60ch; font-size: 19px; line-height: 1.6; color: rgba(232,234,236,0.75)" data-t>Deep expertise across technology, defense and venture building — backing founders with the experience to move fast and build right.</p>
+      </div>
+    </section>
+
+    <section style="border-bottom: 1px solid rgba(232,234,236,0.1); background: #10141a">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 56px 32px">
+        <h2 style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(232,234,236,0.45)" data-t>Executive team</h2>
+        <div style="margin-top: 22px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px">
+          <sc-for list="{{ execTeam }}" as="p" hint-placeholder-count="6">
+            <div>
+              <div style="aspect-ratio: 4/5; border: 1px solid rgba(232,234,236,0.14); border-radius: 6px; background: repeating-linear-gradient(135deg, rgba(232,234,236,0.05) 0 10px, transparent 10px 20px)"></div>
+              <h3 style="margin-top: 14px; font-size: 20px">{{ p.name }}</h3>
+              <p style="margin-top: 4px; font-size: 14px; color: rgba(232,234,236,0.6)">{{ p.role }}</p>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-bottom: 1px solid rgba(232,234,236,0.1)">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 56px 32px">
+        <h2 style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(232,234,236,0.45)" data-t>Advisory board</h2>
+        <div style="margin-top: 22px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px">
+          <sc-for list="{{ advisors }}" as="p" hint-placeholder-count="5">
+            <div>
+              <div style="aspect-ratio: 4/5; border: 1px solid rgba(232,234,236,0.14); border-radius: 6px; background: repeating-linear-gradient(135deg, rgba(232,234,236,0.05) 0 10px, transparent 10px 20px)"></div>
+              <h3 style="margin-top: 12px; font-size: 17px">{{ p.name }}</h3>
+              <p style="margin-top: 4px; font-size: 13px; line-height: 1.45; color: rgba(232,234,236,0.6)">{{ p.role }}</p>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+  </div>
+  </sc-if>
+
+  <!-- ============ APPLY ============ -->
+  <sc-if value="{{ isApply }}" hint-placeholder-val="{{ false }}">
+  <div>
+    <section style="border-bottom: 1px solid rgba(232,234,236,0.1)">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 74px 32px 56px">
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: oklch(0.78 0.13 78)" data-t>Apply</span>
+        <h1 style="margin-top: 16px; font-size: 60px; line-height: 1; max-width: 20ch" data-t>Apply to Cohort 3.</h1>
+        <p style="margin-top: 22px; max-width: 62ch; font-size: 19px; line-height: 1.6; color: rgba(232,234,236,0.75)" data-t>Check the fit criteria, then send the application. It takes about twenty minutes if your validation evidence is ready.</p>
+        <a href="https://forms.gle/N11L7pqNefYQdxHu8" target="_blank" rel="noopener" style="display: inline-block; margin-top: 28px; background: oklch(0.78 0.13 78); color: #0c0f12; font-weight: 600; font-size: 16px; padding: 16px 28px; border-radius: 4px" data-t>Open the application form</a>
+      </div>
+    </section>
+
+    <section style="border-bottom: 1px solid rgba(232,234,236,0.1); background: #10141a">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 60px 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px">
+        <div style="border: 1px solid rgba(214,168,72,0.4); border-radius: 8px; padding: 30px">
+          <h2 style="font-size: 24px; color: oklch(0.78 0.13 78)" data-t>You are a fit if</h2>
+          <div style="margin-top: 18px; display: flex; flex-direction: column; gap: 12px; font-size: 16px; line-height: 1.55; color: rgba(232,234,236,0.82)">
+            <span data-t>You are TRL 6+ and past the prototype stage.</span>
+            <span data-t>Your technology is validated in operational or combat-like environments.</span>
+            <span data-t>You have pilots, users or paying customers.</span>
+            <span data-t>You are preparing for international scale and allied market entry.</span>
+            <span data-t>A decision-maker can commit to the in-person residency.</span>
+          </div>
+        </div>
+        <div style="border: 1px solid rgba(232,234,236,0.14); border-radius: 8px; padding: 30px">
+          <h2 style="font-size: 24px" data-t>You are not a fit if</h2>
+          <div style="margin-top: 18px; display: flex; flex-direction: column; gap: 12px; font-size: 16px; line-height: 1.55; color: rgba(232,234,236,0.6)">
+            <span data-t>You are at idea or pre-validation stage.</span>
+            <span data-t>You are still building the prototype or MVP.</span>
+            <span data-t>You have lab tests and demos but no field validation.</span>
+            <span data-t>You are focused on local markets only.</span>
+            <span data-t>You cannot commit to a multi-month execution program.</span>
+          </div>
+          <p style="margin-top: 20px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: rgba(232,234,236,0.45)" data-t>Exceptional teams may still be considered.</p>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-bottom: 1px solid rgba(232,234,236,0.1)">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 60px 32px">
+        <h2 style="font-size: 32px" data-t>What to prepare</h2>
+        <div style="margin-top: 26px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px">
+          <div style="border-top: 2px solid rgba(232,234,236,0.2); padding-top: 16px">
+            <h3 style="font-size: 19px" data-t>Evidence of validation</h3>
+            <p style="margin-top: 8px; font-size: 15px; line-height: 1.6; color: rgba(232,234,236,0.65)" data-t>Where the technology has been deployed, under what conditions, and what it achieved. Share only what you can share.</p>
+          </div>
+          <div style="border-top: 2px solid rgba(232,234,236,0.2); padding-top: 16px">
+            <h3 style="font-size: 19px" data-t>Traction</h3>
+            <p style="margin-top: 8px; font-size: 15px; line-height: 1.6; color: rgba(232,234,236,0.65)" data-t>Pilots, users, contracts, orders — with the customer type even if the name is confidential.</p>
+          </div>
+          <div style="border-top: 2px solid rgba(232,234,236,0.2); padding-top: 16px">
+            <h3 style="font-size: 19px" data-t>Scale intent</h3>
+            <p style="margin-top: 8px; font-size: 15px; line-height: 1.6; color: rgba(232,234,236,0.65)" data-t>Which allied markets you are targeting, and what is currently blocking entry.</p>
+          </div>
+        </div>
+        <p style="margin-top: 26px; font-size: 15px; color: rgba(232,234,236,0.6)" data-t>Questions before applying? Write to team@dts-accelerator.com.</p>
+      </div>
+    </section>
+  </div>
+  </sc-if>
+
+  <!-- ============ CONTACT ============ -->
+  <sc-if value="{{ isContact }}" hint-placeholder-val="{{ false }}">
+  <div>
+    <section style="border-bottom: 1px solid rgba(232,234,236,0.1)">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 74px 32px 56px">
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: oklch(0.75 0.12 232)" data-t>Contact</span>
+        <h1 style="margin-top: 16px; font-size: 60px; line-height: 1; max-width: 20ch" data-t>Let's talk.</h1>
+        <p style="margin-top: 22px; max-width: 60ch; font-size: 19px; line-height: 1.6; color: rgba(232,234,236,0.75)" data-t>Investors, primes, mentors, partners and donors: tell us what you are looking for and we will put the right person in the room.</p>
+      </div>
+    </section>
+
+    <section style="border-bottom: 1px solid rgba(232,234,236,0.1); background: #10141a">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 60px 32px; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 50px">
+        <div>
+          <h2 style="font-size: 28px" data-t>Send us a note</h2>
+          <div style="margin-top: 24px; display: flex; flex-direction: column; gap: 16px; max-width: 520px">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px">
+              <label style="display: flex; flex-direction: column; gap: 7px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(232,234,236,0.5)">
+                <span data-t>Name</span>
+                <input type="text" style="background: #0c0f12; border: 1px solid rgba(232,234,236,0.18); border-radius: 4px; padding: 12px; color: #e8eaec; font-family: 'IBM Plex Sans', sans-serif; font-size: 15px" />
+              </label>
+              <label style="display: flex; flex-direction: column; gap: 7px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(232,234,236,0.5)">
+                <span data-t>Organisation</span>
+                <input type="text" style="background: #0c0f12; border: 1px solid rgba(232,234,236,0.18); border-radius: 4px; padding: 12px; color: #e8eaec; font-family: 'IBM Plex Sans', sans-serif; font-size: 15px" />
+              </label>
+            </div>
+            <label style="display: flex; flex-direction: column; gap: 7px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(232,234,236,0.5)">
+              <span data-t>Email</span>
+              <input type="email" style="background: #0c0f12; border: 1px solid rgba(232,234,236,0.18); border-radius: 4px; padding: 12px; color: #e8eaec; font-family: 'IBM Plex Sans', sans-serif; font-size: 15px" />
+            </label>
+            <label style="display: flex; flex-direction: column; gap: 7px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(232,234,236,0.5)">
+              <span data-t>I am reaching out as</span>
+              <select style="background: #0c0f12; border: 1px solid rgba(232,234,236,0.18); border-radius: 4px; padding: 12px; color: #e8eaec; font-family: 'IBM Plex Sans', sans-serif; font-size: 15px">
+                <option data-t>An investor</option>
+                <option data-t>A donor or funder</option>
+                <option data-t>A prime or corporate partner</option>
+                <option data-t>A mentor or expert</option>
+                <option data-t>A startup with a question</option>
+                <option data-t>Press</option>
+              </select>
+            </label>
+            <label style="display: flex; flex-direction: column; gap: 7px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(232,234,236,0.5)">
+              <span data-t>Message</span>
+              <textarea rows="4" style="background: #0c0f12; border: 1px solid rgba(232,234,236,0.18); border-radius: 4px; padding: 12px; color: #e8eaec; font-family: 'IBM Plex Sans', sans-serif; font-size: 15px; resize: vertical"></textarea>
+            </label>
+            <button type="button" onClick="{{ submitNote }}" style="align-self: start; background: oklch(0.78 0.13 78); color: #0c0f12; border: 0; font-family: 'IBM Plex Sans', sans-serif; font-weight: 600; font-size: 15px; padding: 14px 26px; border-radius: 4px; cursor: pointer" data-t>Send</button>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 22px">
+          <div style="border: 1px solid rgba(120,180,230,0.4); border-radius: 8px; padding: 26px">
+            <h3 style="font-size: 20px; color: oklch(0.75 0.12 232)" data-t>Investors</h3>
+            <p style="margin-top: 10px; font-size: 15px; line-height: 1.6; color: rgba(232,234,236,0.72)" data-t>Book a 30-minute intro call. We will walk you through the current cohort, how we diligence operational validation, and where co-investment fits.</p>
+            <a href="mailto:team@dts-accelerator.com?subject=Investor%20intro%20call" style="display: inline-block; margin-top: 14px; font-weight: 600; font-size: 15px; color: oklch(0.75 0.12 232)" data-t>Book an intro call →</a>
+          </div>
+          <div style="border: 1px solid rgba(232,234,236,0.14); border-radius: 8px; padding: 26px">
+            <h3 style="font-size: 20px" data-t>Where we are</h3>
+            <p style="margin-top: 10px; font-size: 15px; line-height: 1.7; color: rgba(232,234,236,0.72)">333 Ravenswood Ave<br />Menlo Park, CA 94025, USA</p>
+            <p style="margin-top: 12px; font-size: 15px; line-height: 1.7"><a href="tel:+16503874412">+1 (650) 387-4412</a><br /><a href="mailto:team@dts-accelerator.com">team@dts-accelerator.com</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  </sc-if>
+
+  <!-- ============ DONATE ============ -->
+  <sc-if value="{{ isDonate }}" hint-placeholder-val="{{ false }}">
+  <div>
+    <section style="border-bottom: 1px solid rgba(232,234,236,0.1); position: relative; overflow: hidden">
+      <div style="position: absolute; inset: 0; background: radial-gradient(100% 80% at 15% 0%, rgba(214,168,72,0.14), transparent 62%)"></div>
+      <div style="position: relative; max-width: 1240px; margin: 0 auto; padding: 74px 32px 56px">
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: oklch(0.78 0.13 78)" data-t>Support</span>
+        <h1 style="margin-top: 16px; font-size: 60px; line-height: 1; max-width: 22ch" data-t>Fund the founders defending free societies.</h1>
+        <p style="margin-top: 22px; max-width: 62ch; font-size: 19px; line-height: 1.6; color: rgba(232,234,236,0.78)" data-t>Ukrainian teams take part at no program cost. That is possible because donors pay for it. Their technology is tested where it matters most, and every seat funded moves a proven security capability into allied hands.</p>
+      </div>
+    </section>
+
+    <section style="border-bottom: 1px solid rgba(232,234,236,0.1); background: #10141a">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 56px 32px">
+        <h2 style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(232,234,236,0.45)" data-t>Where the money goes</h2>
+        <div style="margin-top: 22px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px">
+          <div style="border: 1px solid rgba(232,234,236,0.14); border-radius: 8px; padding: 28px">
+            <div style="font-family: Archivo, sans-serif; font-size: 34px; font-weight: 700; color: oklch(0.78 0.13 78)">$8,250</div>
+            <h3 style="margin-top: 10px; font-size: 19px" data-t>One founder seat</h3>
+            <p style="margin-top: 8px; font-size: 15px; line-height: 1.6; color: rgba(232,234,236,0.68)" data-t>Covers a full place in the residency and six months of mentoring for one Ukrainian company.</p>
+          </div>
+          <div style="border: 1px solid rgba(232,234,236,0.14); border-radius: 8px; padding: 28px">
+            <div style="font-family: Archivo, sans-serif; font-size: 34px; font-weight: 700; color: oklch(0.78 0.13 78)" data-t>Travel</div>
+            <h3 style="margin-top: 10px; font-size: 19px" data-t>Getting teams here</h3>
+            <p style="margin-top: 8px; font-size: 15px; line-height: 1.6; color: rgba(232,234,236,0.68)" data-t>Flights, visas and accommodation are the most common reason a selected founder cannot attend.</p>
+          </div>
+          <div style="border: 1px solid rgba(232,234,236,0.14); border-radius: 8px; padding: 28px">
+            <div style="font-family: Archivo, sans-serif; font-size: 34px; font-weight: 700; color: oklch(0.78 0.13 78)" data-t>Cohort</div>
+            <h3 style="margin-top: 10px; font-size: 19px" data-t>Naming a full cohort</h3>
+            <p style="margin-top: 8px; font-size: 15px; line-height: 1.6; color: rgba(232,234,236,0.68)" data-t>Underwrite an entire intake and shape its thematic focus with us.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-bottom: 1px solid rgba(232,234,236,0.1)">
+      <div style="max-width: 1240px; margin: 0 auto; padding: 56px 32px">
+        <h2 style="font-size: 32px" data-t>Three ways to take part</h2>
+        <div style="margin-top: 26px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px">
+          <div style="border: 1px solid rgba(214,168,72,0.4); border-radius: 8px; padding: 28px; display: flex; flex-direction: column; gap: 12px">
+            <h3 style="font-size: 21px" data-t>Talk to the team</h3>
+            <p style="font-size: 15px; line-height: 1.6; color: rgba(232,234,236,0.7)" data-t>Thirty minutes with a co-founder on where support is most needed this cohort.</p>
+            <a href="mailto:team@dts-accelerator.com?subject=Donor%20conversation" style="margin-top: auto; font-weight: 600; font-size: 15px" data-t>Book a call →</a>
+          </div>
+          <div style="border: 1px solid rgba(232,234,236,0.14); border-radius: 8px; padding: 28px; display: flex; flex-direction: column; gap: 12px">
+            <h3 style="font-size: 21px" data-t>Read the impact brief</h3>
+            <p style="font-size: 15px; line-height: 1.6; color: rgba(232,234,236,0.7)" data-t>What the last two cohorts produced, where the funding went, and what Cohort 3 needs.</p>
+            <a href="mailto:team@dts-accelerator.com?subject=Impact%20brief%20request" style="margin-top: auto; font-weight: 600; font-size: 15px" data-t>Request the brief →</a>
+          </div>
+          <div style="border: 1px solid rgba(232,234,236,0.14); border-radius: 8px; padding: 28px; display: flex; flex-direction: column; gap: 12px">
+            <h3 style="font-size: 21px" data-t>Give to the Alumni Fund</h3>
+            <p style="font-size: 15px; line-height: 1.6; color: rgba(232,234,236,0.7)" data-t>The Ukrainian Alumni Fund pays participation costs directly. Contribute any amount.</p>
+            <a href="mailto:team@dts-accelerator.com?subject=Ukrainian%20Alumni%20Fund" style="margin-top: auto; font-weight: 600; font-size: 15px" data-t>Contribute →</a>
+          </div>
+        </div>
+        <p style="margin-top: 22px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: rgba(232,234,236,0.4)" data-t>Add your payment or donation platform link and these buttons will point straight at it.</p>
+      </div>
+    </section>
+  </div>
+  </sc-if>
+
+  </main>
+
+  <section style="border-bottom: 1px solid rgba(232,234,236,0.1); background: linear-gradient(100deg, rgba(214,168,72,0.12), rgba(96,165,215,0.1))">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 52px 32px; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap">
+      <div>
+        <h2 style="font-size: 30px" data-t>Cohort 3 — residency January 2027</h2>
+        <p style="margin-top: 8px; font-size: 16px; color: rgba(232,234,236,0.75)" data-t>Validated in the field and ready for allied markets? This is your execution track.</p>
+      </div>
+      <div style="display: flex; gap: 12px">
+        <a href="#/apply" style="background: oklch(0.78 0.13 78); color: #0c0f12; font-weight: 600; font-size: 15px; padding: 14px 24px; border-radius: 4px" data-t>Apply</a>
+        <a href="#/contact" style="border: 1px solid rgba(232,234,236,0.3); color: #e8eaec; font-weight: 600; font-size: 15px; padding: 14px 24px; border-radius: 4px" data-t>Contact us</a>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background: #0a0c0f">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 54px 32px 30px; display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px">
+      <div>
+        <div style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 22px; letter-spacing: 0.02em">DTSA</div>
+        <p style="margin-top: 10px; font-size: 14px; line-height: 1.6; color: rgba(232,234,236,0.5)" data-t>Deep Tech Security Accelerator</p>
+        <p style="margin-top: 16px; font-size: 14px; line-height: 1.7; color: rgba(232,234,236,0.5)">333 Ravenswood Ave<br />Menlo Park, CA 94025, USA</p>
+        <p style="margin-top: 12px; font-size: 14px; line-height: 1.7"><a href="tel:+16503874412">+1 (650) 387-4412</a><br /><a href="mailto:team@dts-accelerator.com">team@dts-accelerator.com</a></p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px">
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(232,234,236,0.4)" data-t>Accelerator</span>
+        <a href="#/" style="color: rgba(232,234,236,0.72)" data-t>About</a>
+        <a href="#/program" style="color: rgba(232,234,236,0.72)" data-t>Program</a>
+        <a href="#/cohorts" style="color: rgba(232,234,236,0.72)" data-t>Cohorts</a>
+        <a href="#/alumni" style="color: rgba(232,234,236,0.72)" data-t>Alumni</a>
+        <a href="#/team" style="color: rgba(232,234,236,0.72)" data-t>Team</a>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px">
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(232,234,236,0.4)" data-t>Get involved</span>
+        <a href="#/apply" style="color: rgba(232,234,236,0.72)" data-t>Apply</a>
+        <a href="#/events" style="color: rgba(232,234,236,0.72)" data-t>Events</a>
+        <a href="#/donate" style="color: rgba(232,234,236,0.72)" data-t>Support us</a>
+        <a href="#/contact" style="color: rgba(232,234,236,0.72)" data-t>Contact</a>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px">
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(232,234,236,0.4)" data-t>Social</span>
+        <a href="https://www.linkedin.com/company/deep-tech-security-accelerator/" target="_blank" rel="noopener" style="color: rgba(232,234,236,0.72)">LinkedIn</a>
+        <a href="https://www.facebook.com/dtsaccelerator" target="_blank" rel="noopener" style="color: rgba(232,234,236,0.72)">Facebook</a>
+      </div>
+    </div>
+    <div style="max-width: 1240px; margin: 0 auto; padding: 18px 32px 40px; border-top: 1px solid rgba(232,234,236,0.1); display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.06em; color: rgba(232,234,236,0.35)">
+      <span>© DTSA 2026. All rights reserved.</span>
+      <span data-t>In partnership with SRI International</span>
+    </div>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+const UK = {
+  "Menlo Park · Kyiv": "Менло-Парк · Київ",
+  "Program": "Програма",
+  "Cohorts": "Когорти",
+  "Events": "Події",
+  "Alumni": "Випускники",
+  "Team": "Команда",
+  "Contact": "Контакти",
+  "Apply": "Подати заявку",
+  "Cohort 3 · Residency January 2027 · Applications open": "Когорта 3 · Резиденція у січні 2027 · Заявки відкриті",
+  "Battlefield-validated technology,": "Технології, перевірені на фронті,",
+  "scaled into allied markets.": "масштабуються на ринки союзників.",
+  "The Deep Tech Security Accelerator takes defense and dual-use startups that already work in the field and gives them six months of execution support, a Silicon Valley residency with SRI International, and direct routes to buyers, primes and capital across the U.S., Europe and the Indo-Pacific.": "Deep Tech Security Accelerator бере оборонні та подвійного призначення стартапи, які вже працюють у реальних умовах, і дає їм шість місяців супроводу, резиденцію в Кремнієвій долині разом із SRI International та прямі шляхи до замовників, оборонних гігантів і капіталу в США, Європі та Індо-Пацифіці.",
+  "Apply to Cohort 3": "Подати заявку до Когорти 3",
+  "Talk to the team": "Поговорити з командою",
+  "TRL 6+ only": "Лише TRL 6+",
+  "Hosted with SRI International": "Проводиться разом із SRI International",
+  "Fully funded for Ukrainian teams": "Повністю покрито для українських команд",
+  "42 startups to date": "42 стартапи на сьогодні",
+  "Choose your track": "Виберіть свій напрям",
+  "01 / STARTUP": "01 / СТАРТАП",
+  "You have tech that already survives contact with reality.": "У вас є технологія, яка вже витримує зустріч із реальністю.",
+  "Join the accelerator: two weeks in Silicon Valley, six months of execution support, and introductions that turn validation into contracts.": "Приєднуйтеся до акселератора: два тижні в Кремнієвій долині, шість місяців супроводу та знайомства, які перетворюють валідацію на контракти.",
+  "Submit an application →": "Подати заявку →",
+  "02 / INVESTOR": "02 / ІНВЕСТОР",
+  "You want deal flow that has been stress-tested, not pitched.": "Вам потрібен потік угод, перевірений у бою, а не в презентації.",
+  "Get early access to operationally validated companies, diligence alongside our technical mentors, and stay wired into the defense ecosystem on both continents.": "Отримайте ранній доступ до операційно перевірених компаній, проводьте due diligence разом із нашими технічними менторами та залишайтеся в центрі оборонної екосистеми на двох континентах.",
+  "Book an intro call →": "Записатися на дзвінок →",
+  "03 / DONOR": "03 / ДОНОР",
+  "You want free societies equipped to defend themselves.": "Ви хочете, щоб вільні суспільства могли себе захистити.",
+  "Donor support pays for Ukrainian founders to take part. Every seat funded is a security capability moved from the front line into allied hands.": "Підтримка донорів оплачує участь українських засновників. Кожне сплачене місце — це спроможність безпеки, перенесена з фронту до рук союзників.",
+  "Support the program →": "Підтримати програму →",
+  "Real teams. Real traction. Outcomes measured after the program, not during it.": "Справжні команди. Справжня динаміка. Результати, які міряють після програми, а не під час неї.",
+  "Raised post-program": "Залучено після програми",
+  "Startups accelerated": "Стартапів пройшли акселерацію",
+  "Connections across the U.S. defense ecosystem": "Зв'язків в оборонній екосистемі США",
+  "Partnerships secured": "Укладених партнерств",
+  "Aligned government orders": "Узгоджених державних замовлень",
+  "Cohorts completed, cross-collaborating": "Завершені когорти, які співпрацюють між собою",
+  "What makes DTSA different": "Чим DTSA відрізняється",
+  "We accelerate companies that are already building, not companies still imagining. Everything in the program is aimed at one thing: getting a validated capability adopted by an allied customer.": "Ми акселеруємо компанії, які вже будують, а не ті, що все ще уявляють. Усе в програмі спрямоване на одне: щоб перевірена технологія була прийнята замовником із країн-союзників.",
+  "See the full program →": "Дивитися повну програму →",
+  "Battle-tested cohorts only": "Лише перевірені в бою когорти",
+  "No idea-stage noise. Frontline-derived learning loops and direct access to Ukrainian founders and engineers working under the world's most demanding conditions.": "Жодного шуму на стадії ідеї. Цикли навчання, що походять із фронту, і прямий доступ до українських засновників та інженерів, які працюють у найважчих умовах світу.",
+  "Structured ecosystem access": "Структурований доступ до екосистеми",
+  "Curated introductions to primes, investors, allied stakeholders and R&D partners, with technical, commercial and regulatory guidance in the same room.": "Відібрані знайомства з оборонними гігантами, інвесторами, союзними стейкхолдерами та R&D-партнерами, а також технічна, комерційна й регуляторна підтримка в одній кімнаті.",
+  "Six months, not one week": "Шість місяців, а не один тиждень",
+  "Sustained, scale-oriented engagement built around deployment, partnerships and market expansion long after the residency ends.": "Тривала робота на масштабування — розгортання, партнерства й вихід на ринки — задовго після завершення резиденції.",
+  "Hear it from the founders": "Почуйте від засновників",
+  "Meet our alumni →": "Познайомитися з випускниками →",
+  "Our partners": "Наші партнери",
+  "DTSA runs in strategic partnership with SRI International, with support from the Consulate General of Ukraine in San Francisco.": "DTSA працює у стратегічному партнерстві з SRI International за підтримки Генерального консульства України в Сан-Франциско.",
+  "Six months engineered around adoption.": "Шість місяців, побудованих навколо впровадження.",
+  "One week of onboarding, two weeks of in-person immersion in Silicon Valley, then six months of mentored execution with milestone tracking. Built for the realities of defense procurement, export control and allied market entry.": "Тиждень онбордингу, два тижні особистого занурення в Кремнієвій долині, потім шість місяців менторського супроводу з відстеженням етапів. Створено під реалії оборонних закупівель, експортного контролю та виходу на ринки союзників.",
+  "PHASE 1 · 1 WEEK": "ЕТАП 1 · 1 ТИЖДЕНЬ",
+  "Online onboarding": "Онлайн-онбординг",
+  "Align on goals, map your target markets and buyers, and arrive at the residency with the groundwork already done.": "Узгоджуємо цілі, визначаємо цільові ринки та замовників — на резиденцію ви приїжджаєте з готовим фундаментом.",
+  "PHASE 2 · 2 WEEKS": "ЕТАП 2 · 2 ТИЖНІ",
+  "Silicon Valley residency": "Резиденція в Кремнієвій долині",
+  "Working immersion hosted with SRI International: positioning, curated meetings with primes and investors, workshops, and ecosystem access.": "Робоче занурення разом із SRI International: позиціювання, відібрані зустрічі з оборонними гігантами та інвесторами, воркшопи й доступ до екосистеми.",
+  "PHASE 3 · 6 MONTHS": "ЕТАП 3 · 6 МІСЯЦІВ",
+  "Remote execution & mentoring": "Дистанційне виконання й менторство",
+  "Expert mentoring, partner and investor follow-ups, and milestone tracking until the pipeline is real.": "Експертне менторство, супровід партнерів та інвесторів і відстеження етапів, поки пайплайн не стане реальним.",
+  "What you gain": "Що ви отримуєте",
+  "Defense immersion": "Оборонне занурення",
+  "Positioning work, partner meetings and a high-trust gateway into the Valley's defense ecosystem.": "Робота над позиціюванням, зустрічі з партнерами та довірений вхід до оборонної екосистеми Долини.",
+  "Founder-level execution": "Виконання на рівні засновника",
+  "Strategy, narrative, GTM, negotiation, export compliance and leadership, taught for defense and dual-use conditions.": "Стратегія, наратив, GTM, переговори, експортний комплаєнс і лідерство — під умови оборонних і подвійних технологій.",
+  "Transatlantic and Indo-Pacific bridge": "Трансатлантичний та Індо-Пацифічний мост",
+  "Structured access to primes, defense investors, allied stakeholders, operators, mentors and R&D partners.": "Структурований доступ до оборонних гігантів, інвесторів, союзних стейкхолдерів, операторів, менторів і R&D-партнерів.",
+  "Who should attend": "Хто має брати участь",
+  "DTSA is built for founders and senior leaders who can make strategic decisions in the room and act on them afterwards.": "DTSA створено для засновників і топменеджерів, які можуть ухвалювати стратегічні рішення на місці й діяти після цього.",
+  "Founder / CEO": "Засновник / CEO",
+  "CTO involved in strategic partnerships": "CTO, залучений до стратегічних партнерств",
+  "Chief Strategy or Business Development lead": "Керівник стратегії або розвитку бізнесу",
+  "The participant must be able to represent the technology and its operational validation. If the attendee cannot make decisions, the program will not deliver its value.": "Учасник має вміти представити технологію та її операційну валідацію. Якщо він не ухвалює рішень, програма не дасть повної цінності.",
+  "Fees and coverage": "Вартість і покриття",
+  "Ukrainian startups": "Українські стартапи",
+  "Fully covered by the Ukrainian Alumni Fund and supporting donors. Participants cover travel and accommodation only.": "Повністю покривається Українським фондом випускників і донорами. Учасники оплачують лише переліт і проживання.",
+  "All other applicants": "Усі інші заявники",
+  "$8,250 for the two-week residency plus six months of mentoring and ecosystem access, in addition to travel and accommodation.": "$8 250 за двотижневу резиденцію плюс шість місяців менторства й доступу до екосистеми, окрім перельоту та проживання.",
+  "Start an application": "Почати заявку",
+  "FAQ": "Часті питання",
+  "What does “battle-tested” mean here?": "Що означає «перевірено в бою»?",
+  "Operational validation in real-world or combat-like environments — not lab tests or demos.": "Операційна валідація в реальних або близьких до бойових умовах — не лабораторні тести чи демо.",
+  "What stage is required?": "Яка стадія потрібна?",
+  "We select TRL 6+ teams. Exceptionally, TRL 4–5 companies with completed operational validation are considered.": "Ми відбираємо команди TRL 6+. У виняткових випадках розглядаємо компанії TRL 4–5 із завершеною операційною валідацією.",
+  "Can dual-use startups apply?": "Чи можуть подаватися стартапи подвійного призначення?",
+  "Yes. DTSA is built for both defense and dual-use technologies.": "Так. DTSA створено і для оборонних, і для технологій подвійного призначення.",
+  "Which markets does DTSA focus on?": "На яких ринках фокусується DTSA?",
+  "The United States, Europe and the Indo-Pacific allied markets.": "США, Європа та ринки союзників в Індо-Пацифіці.",
+  "How is sensitive information handled?": "Як обробляється чутлива інформація?",
+  "Share only what is required for evaluation and partnership conversations. Nothing is passed on without your consent.": "Діліться лише тим, що потрібно для оцінки та партнерських розмов. Нічого не передається без вашої згоди.",
+  "How do we apply?": "Як подати заявку?",
+  "Complete the application form on the Apply page. Selection runs on a rolling basis until the cohort is full.": "Заповніть форму на сторінці «Подати заявку». Відбір триває безперервно, поки когорта не буде заповнена.",
+  "The DTSA cohorts we host.": "Когорти DTSA, які ми проводимо.",
+  "Each cohort is small, selected for operational validation, and run end to end by the DTSA team in Menlo Park. Below: where each one stands.": "Кожна когорта невелика, відібрана за операційною валідацією і проводиться командою DTSA у Менло-Парку від початку до кінця. Нижче — статус кожної.",
+  "Cohort 3": "Когорта 3",
+  "OPEN FOR APPLICATIONS": "ЗАЯВКИ ВІДКРИТІ",
+  "Residency: January 2027, Menlo Park": "Резиденція: січень 2027, Менло-Парк",
+  "If your technology is validated in real conditions and you are ready to scale into allied markets, this is your execution track. Applications are reviewed on a rolling basis; the cohort closes when it is full.": "Якщо ваша технологія перевірена в реальних умовах і ви готові масштабуватися на ринки союзників — це ваш трек. Заявки розглядаються безперервно; набір закривається після заповнення.",
+  "TRL 6+": "TRL 6+",
+  "Defense & dual-use": "Оборонні та подвійного призначення",
+  "Ukrainian seats fully funded": "Українські місця повністю покриті",
+  "Apply now": "Подати заявку",
+  "Cohort 2": "Когорта 2",
+  "COMPLETED": "ЗАВЕРШЕНО",
+  "Second BEAST Mode cohort": "Друга когорта BEAST Mode",
+  "A deeper bench of autonomy, EW and sensing teams, with a residency built around procurement pathways and allied government orders. Alumni continue to work across cohorts.": "Сильніший склад команд у сфері автономності, РЕБ і сенсорики; резиденція була побудована навколо шляхів закупівель і державних замовлень союзників. Випускники продовжують працювати між когортами.",
+  "Cohort 1": "Когорта 1",
+  "The founding cohort": "Перша когорта",
+  "The first group of battlefield-validated Ukrainian and allied teams to run the full DTSA track — and the group whose results set the standard for everything since.": "Перша група перевірених на фронті українських і союзних команд, які пройшли повний трек DTSA — і чиї результати задали стандарт для всього далі.",
+  "See the alumni →": "Дивитися випускників →",
+  "How selection works": "Як відбувається відбір",
+  "Application": "Заявка",
+  "Company, technology, TRL and evidence of field validation.": "Компанія, технологія, TRL і докази валідації в полі.",
+  "Technical review": "Технічна оцінка",
+  "Our mentors and advisors assess operational proof and readiness to scale.": "Наші менториi та радники оцінюють операційні докази й готовність до масштабування.",
+  "Founder interview": "Інтервʼю із засновником",
+  "A conversation with the decision-maker who will attend the residency.": "Розмова з тим, хто ухвалює рішення і поїде на резиденцію.",
+  "Offer and onboarding": "Офер та онбординг",
+  "Selected teams confirm participation and begin the onboarding week.": "Відібрані команди підтверджують участь і починають тиждень онбордингу.",
+  "Where to find us next.": "Де нас знайти найближчим часом.",
+  "Cohort milestones, demo days and the defense conferences where DTSA teams show up. If you want to meet at any of these, write to us.": "Етапи когорт, демо-дні та оборонні конференції, де присутні команди DTSA. Хочете зустрітися — напишіть нам.",
+  "Featured": "Головна подія",
+  "JANUARY 2027 · MENLO PARK, CA": "СІЧЕНЬ 2027 · МЕНЛО-ПАРК, КАЛІФОРНІЯ",
+  "Cohort 3 Silicon Valley Residency": "Резиденція Когорти 3 у Кремнієвій долині",
+  "Two weeks of positioning, curated meetings and workshops hosted with SRI International, closing with a demo day for investors, primes and allied stakeholders.": "Два тижні позиціювання, відібраних зустрічей і воркшопів разом із SRI International, із демо-днем для інвесторів, оборонних гігантів і союзних стейкхолдерів у фіналі.",
+  "Apply to attend": "Подати заявку на участь",
+  "Request an invitation": "Запросити запрошення",
+  "Calendar": "Календар",
+  "Rolling · 2026": "Безперервно · 2026",
+  "Cohort 3 applications": "Заявки до Когорти 3",
+  "Reviewed as they arrive, closing once the cohort is full.": "Розглядаються по мірі надходження, до заповнення когорти.",
+  "Online": "Онлайн",
+  "Apply →": "Подати →",
+  "Nov 2026": "Листопад 2026",
+  "Investor briefing: allied deal flow": "Брифінг для інвесторів: потік угод союзників",
+  "A closed session on what battlefield validation means for diligence. Date to confirm.": "Закрита сесія про те, що валідація на фронті означає для due diligence. Дата уточнюється.",
+  "Online / San Francisco": "Онлайн / Сан-Франциско",
+  "Request seat →": "Запросити місце →",
+  "Jan 2027": "Січень 2027",
+  "Cohort 3 residency & demo day": "Резиденція Когорти 3 і демо-день",
+  "Two weeks on site, closing with the cohort demo day.": "Два тижні на місці, з демо-днем когорти у фіналі.",
+  "Menlo Park, CA": "Менло-Парк, Каліфорнія",
+  "Details →": "Деталі →",
+  "2027 · TBC": "2027 · УТОЧНЮЄТЬСЯ",
+  "Defense conferences with our teams": "Оборонні конференції з нашими командами",
+  "Alumni exhibit across European and U.S. defense events. Send us your event list and we will confirm attendance.": "Випускники виставляються на оборонних подіях у Європі та США. Надішліть нам список подій — ми підтвердимо участь.",
+  "Europe / U.S.": "Європа / США",
+  "Ask us →": "Запитати →",
+  "Entries marked “to confirm” are placeholders — send the real dates and we will publish them.": "Позначені як «уточнюється» — це заготовки. Надішліть реальні дати, і ми їх опублікуємо.",
+  "42 companies, two cohorts, one network.": "42 компанії, дві когорти, одна мережа.",
+  "DTSA alumni have raised more than $30M after the program, secured DIU partnerships and NATO-aligned government orders, and keep collaborating across cohorts.": "Випускники DTSA залучили понад $30 млн після програми, отримали партнерства з DIU та державні замовлення, узгоджені з НАТО, і продовжують співпрацювати між когортами.",
+  "Alumni companies": "Компанії-випускники",
+  "Drop alumni logos into these slots and we will label each company and cohort.": "Додайте логотипи випускників у ці слоти — ми підпишемо кожну компанію та когорту.",
+  "What alumni say": "Що кажуть випускники",
+  "“The residency turned a working product into a procurement conversation. We left with named buyers, not advice.”": "«Резиденція перетворила робочий продукт на розмову про закупівлю. Ми поїхали з конкретними замовниками, а не з порадами.»",
+  "“Six months of follow-through is the part nobody else does. That is where the round and the pilots came from.”": "«Шість місяців супроводу — те, чого не робить ніхто інший. Саме звідти зʼявилися раунд і пілоти.»",
+  "Placeholder quotes — replace with approved founder statements before publishing.": "Тимчасові цитати — замініть на погоджені висловлювання засновників перед публікацією.",
+  "Meet the DTSA team.": "Знайомтеся з командою DTSA.",
+  "Deep expertise across technology, defense and venture building — backing founders with the experience to move fast and build right.": "Глибока експертиза в технологіях, обороні та побудові венчурів — ми підтримуємо засновників досвідом, який дає швидкість і правильні рішення.",
+  "Executive team": "Керівна команда",
+  "Advisory board": "Рада радників",
+  "Apply to Cohort 3.": "Подати заявку до Когорти 3.",
+  "Check the fit criteria, then send the application. It takes about twenty minutes if your validation evidence is ready.": "Перевірте критерії відповідності й надішліть заявку. Це займе близько двадцяти хвилин, якщо докази валідації готові.",
+  "Open the application form": "Відкрити форму заявки",
+  "You are a fit if": "Ви підходите, якщо",
+  "You are TRL 6+ and past the prototype stage.": "Ви на TRL 6+ і вже пройшли стадію прототипу.",
+  "Your technology is validated in operational or combat-like environments.": "Ваша технологія перевірена в операційних або близьких до бойових умовах.",
+  "You have pilots, users or paying customers.": "У вас є пілоти, користувачі або платні клієнти.",
+  "You are preparing for international scale and allied market entry.": "Ви готуєтеся до міжнародного масштабування та виходу на ринки союзників.",
+  "A decision-maker can commit to the in-person residency.": "Особа, яка ухвалює рішення, може особисто бути на резиденції.",
+  "You are not a fit if": "Ви не підходите, якщо",
+  "You are at idea or pre-validation stage.": "Ви на стадії ідеї або до валідації.",
+  "You are still building the prototype or MVP.": "Ви ще будуєте прототип чи MVP.",
+  "You have lab tests and demos but no field validation.": "У вас є лабораторні тести й демо, але немає валідації в полі.",
+  "You are focused on local markets only.": "Ви орієнтуєтеся лише на локальні ринки.",
+  "You cannot commit to a multi-month execution program.": "Ви не можете віддати кілька місяців програмі виконання.",
+  "Exceptional teams may still be considered.": "Виняткові команди можуть бути розглянуті.",
+  "What to prepare": "Що підготувати",
+  "Evidence of validation": "Докази валідації",
+  "Where the technology has been deployed, under what conditions, and what it achieved. Share only what you can share.": "Де технологію розгортали, за яких умов і з яким результатом. Діліться лише тим, чим можете.",
+  "Traction": "Динаміка",
+  "Pilots, users, contracts, orders — with the customer type even if the name is confidential.": "Пілоти, користувачі, контракти, замовлення — із типом замовника, навіть якщо назва конфіденційна.",
+  "Scale intent": "Плани масштабування",
+  "Which allied markets you are targeting, and what is currently blocking entry.": "На які ринки союзників ви орієнтуєтеся і що зараз блокує вихід.",
+  "Questions before applying? Write to team@dts-accelerator.com.": "Питання перед подачею? Напишіть на team@dts-accelerator.com.",
+  "Let's talk.": "Поговоримо.",
+  "Investors, primes, mentors, partners and donors: tell us what you are looking for and we will put the right person in the room.": "Інвестори, оборонні гіганти, менториi, партнери й донори: скажіть, що вам потрібно, і ми приведемо потрібну людину.",
+  "Send us a note": "Напишіть нам",
+  "Name": "Імʼя",
+  "Organisation": "Організація",
+  "Email": "Email",
+  "I am reaching out as": "Я звертаюся як",
+  "An investor": "Інвестор",
+  "A donor or funder": "Донор або фандрейзер",
+  "A prime or corporate partner": "Оборонний гігант або корпоративний партнер",
+  "A mentor or expert": "Ментор або експерт",
+  "A startup with a question": "Стартап із питанням",
+  "Press": "Преса",
+  "Message": "Повідомлення",
+  "Send": "Надіслати",
+  "Investors": "Інвестори",
+  "Book a 30-minute intro call. We will walk you through the current cohort, how we diligence operational validation, and where co-investment fits.": "Запишіться на 30-хвилинний дзвінок. Ми розповімо про поточну когорту, як ми перевіряємо операційну валідацію і де вписується співінвестування.",
+  "Where we are": "Де ми",
+  "Support": "Підтримка",
+  "Fund the founders defending free societies.": "Підтримайте засновників, які захищають вільні суспільства.",
+  "Ukrainian teams take part at no program cost. That is possible because donors pay for it. Their technology is tested where it matters most, and every seat funded moves a proven security capability into allied hands.": "Українські команди беруть участь без оплати програми. Це можливо завдяки донорам. Їхні технології перевірені там, де це має найбільше значення, і кожне сплачене місце переносить перевірену спроможність безпеки до рук союзників.",
+  "Where the money goes": "Куди йдуть кошти",
+  "One founder seat": "Одне місце для засновника",
+  "Covers a full place in the residency and six months of mentoring for one Ukrainian company.": "Покриває повне місце на резиденції та шість місяців менторства для однієї української компанії.",
+  "Travel": "Дорога",
+  "Getting teams here": "Привезти команди",
+  "Flights, visas and accommodation are the most common reason a selected founder cannot attend.": "Перельоти, візи та проживання — найчастіша причина, чому відібраний засновник не може приїхати.",
+  "Cohort": "Когорта",
+  "Naming a full cohort": "Іменна когорта",
+  "Underwrite an entire intake and shape its thematic focus with us.": "Профінансуйте цілий набір і разом із нами визначте його тематичний фокус.",
+  "Three ways to take part": "Три способи долучитися",
+  "Thirty minutes with a co-founder on where support is most needed this cohort.": "Тридцять хвилин зі співзасновником про те, де підтримка потрібна найбільше цієї когорти.",
+  "Book a call →": "Записатися на дзвінок →",
+  "Read the impact brief": "Прочитати звіт про вплив",
+  "What the last two cohorts produced, where the funding went, and what Cohort 3 needs.": "Що дали дві попередні когорти, куди пішло фінансування і що потрібно Когорті 3.",
+  "Request the brief →": "Запросити звіт →",
+  "Give to the Alumni Fund": "Підтримати Фонд випускників",
+  "The Ukrainian Alumni Fund pays participation costs directly. Contribute any amount.": "Український фонд випускників оплачує участь напряму. Долучіться будь-якою сумою.",
+  "Contribute →": "Долучитися →",
+  "Add your payment or donation platform link and these buttons will point straight at it.": "Додайте посилання на вашу платіжну або донорську платформу — і ці кнопки вестимуть напряму туди.",
+  "Cohort 3 — residency January 2027": "Когорта 3 — резиденція у січні 2027",
+  "Validated in the field and ready for allied markets? This is your execution track.": "Перевірено в полі й готові до ринків союзників? Це ваш трек.",
+  "Contact us": "Звʼязатися з нами",
+  "Deep Tech Security Accelerator": "Акселератор глибоких технологій безпеки",
+  "Accelerator": "Акселератор",
+  "About": "Про нас",
+  "Get involved": "Долучитися",
+  "Support us": "Підтримати нас",
+  "Social": "Соцмережі",
+  "In partnership with SRI International": "У партнерстві з SRI International"
+};
+
+const NAV_LABEL = { program: "Program", cohorts: "Cohorts", events: "Events", alumni: "Alumni", team: "Team", contact: "Contact" };
+
+class Component extends DCLogic {
+  state = { page: "home", lang: "en" };
+
+  componentDidMount() {
+    let lang = "en";
+    try { lang = localStorage.getItem("dtsa.lang") || "en"; } catch (e) {}
+    this.onHash = () => {
+      const raw = (location.hash || "").replace(/^#\/?/, "").split("?")[0];
+      const page = raw === "" ? "home" : raw;
+      this.setState({ page });
+      window.scrollTo(0, 0);
+    };
+    window.addEventListener("hashchange", this.onHash);
+    const raw = (location.hash || "").replace(/^#\/?/, "").split("?")[0];
+    this.setState({ lang, page: raw === "" ? "home" : raw });
+  }
+
+  componentWillUnmount() { window.removeEventListener("hashchange", this.onHash); }
+
+  componentDidUpdate() { this.paint(); }
+
+  paint() {
+    const uk = this.state.lang === "uk";
+    document.documentElement.lang = uk ? "uk" : "en";
+    document.querySelectorAll("[data-t]").forEach(el => {
+      if (el.__en === undefined) el.__en = el.textContent;
+      const key = el.__en.replace(/\s+/g, " ").trim();
+      const t = uk ? UK[key] : null;
+      el.textContent = t || el.__en;
+    });
+    document.querySelectorAll("[data-langbtn]").forEach(el => {
+      const on = el.getAttribute("data-langbtn") === this.state.lang;
+      el.style.background = on ? "rgba(232,234,236,0.12)" : "transparent";
+      el.style.color = on ? "#e8eaec" : "rgba(232,234,236,0.5)";
+    });
+    document.querySelectorAll("[data-nav]").forEach(el => {
+      const on = el.getAttribute("data-nav") === this.state.page;
+      el.style.color = on ? "oklch(0.78 0.13 78)" : "rgba(232,234,236,0.72)";
+    });
+  }
+
+  setLang(lang) {
+    try { localStorage.setItem("dtsa.lang", lang); } catch (e) {}
+    this.setState({ lang });
+  }
+
+  renderVals() {
+    const p = this.state.page;
+    return {
+      isHome: p === "home", isProgram: p === "program", isCohorts: p === "cohorts",
+      isEvents: p === "events", isAlumni: p === "alumni", isTeam: p === "team",
+      isApply: p === "apply", isContact: p === "contact", isDonate: p === "donate",
+      setEn: () => this.setLang("en"),
+      setUk: () => this.setLang("uk"),
+      submitNote: () => { window.location.href = "mailto:team@dts-accelerator.com?subject=Website%20enquiry"; },
+      execTeam: [
+        { name: "Kateryna Akymenko", role: this.state.lang === "uk" ? "Співзасновниця" : "Co-founder" },
+        { name: "Gauthier Vasseur", role: this.state.lang === "uk" ? "Співзасновник, директор академічної програми" : "Co-founder, Academic Program Director" },
+        { name: "Arseniy Polozhiy", role: this.state.lang === "uk" ? "Керівник партнерств, Європа та Україна" : "Head of Partnerships, Europe & Ukraine" },
+        { name: "Ivan Martsilenko", role: this.state.lang === "uk" ? "Радник з оборонних технологій" : "Defense Tech Advisor" },
+        { name: "Anastasiia Liubiashcheva", role: this.state.lang === "uk" ? "Директорка програми" : "Program Director" },
+        { name: "Madelyn Montilla", role: this.state.lang === "uk" ? "Керівниця логістики" : "Head of Logistics" }
+      ],
+      advisors: [
+        { name: "Eveline Buchatskiy", role: this.state.lang === "uk" ? "Керуюча партнерка, D3 Defense Tech Fund" : "Managing Partner, D3 Defense Tech Fund" },
+        { name: "Steve Ciesinski", role: this.state.lang === "uk" ? "Колишній президент SRI International" : "Ex-President of SRI International" },
+        { name: "Oleksandr Akymenko", role: this.state.lang === "uk" ? "Співзасновник і керуючий партнер, Yes&Design" : "Co-Founder & Managing Partner, Yes&Design" },
+        { name: "Jaime Fitzgibbon", role: this.state.lang === "uk" ? "Засновниця та CEO, Ren.ai.ssance Insights; AI/ML портфель, DIU" : "Founder & CEO, Ren.ai.ssance Insights; AI/ML Portfolio, DIU" },
+        { name: "Peter Marcotullio", role: this.state.lang === "uk" ? "Старший віцепрезидент з комерціалізації, SRI International" : "Sr. Vice President, Commercialization, SRI International" }
+      ]
+    };
+  }
+}
+
+</script>
+</body>
+</html>

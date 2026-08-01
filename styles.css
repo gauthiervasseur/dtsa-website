@@ -243,8 +243,11 @@ img { max-width: 100%; display: block; }
   gap: 14px;
   align-items: flex-start;
 }
-.logo-card img { height: 34px; width: auto; max-width: 100%; object-fit: contain; }
-.logo-card img[src$=".svg"] {
+.logo-card img {
+  height: 34px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
   background: var(--dark);
   padding: 8px 12px;
   border-radius: 6px;

@@ -185,13 +185,19 @@ img { max-width: 100%; display: block; }
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: 2fr 2fr;
-  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 1fr;
   gap: 16px;
   margin-top: 48px;
 }
-.gallery-grid img { width: 100%; height: 100%; object-fit: cover; border-radius: 10px; }
+.gallery-grid img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
 .gallery-row-bottom { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.gallery-row-bottom img { aspect-ratio: 1 / 1; }
 
 /* Beast mode section */
 .criteria-list { list-style: none; margin: 32px 0 0; padding: 0; display: grid; gap: 18px; }

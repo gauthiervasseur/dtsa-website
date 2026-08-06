@@ -32,6 +32,7 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
+  overflow-x: hidden;
   font-family: "BDO Grotesk", "Helvetica Neue", Arial, sans-serif;
   font-weight: 500;
   color: var(--ink);
@@ -188,15 +189,23 @@ img { max-width: 100%; display: block; }
   grid-template-columns: 1fr 1fr;
   gap: 16px;
   margin-top: 48px;
+  min-width: 0;
 }
 .gallery-grid img {
   width: 100%;
+  min-width: 0;
   aspect-ratio: 4 / 3;
   object-fit: cover;
   border-radius: 10px;
   display: block;
 }
-.gallery-row-bottom { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.gallery-row-bottom {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  min-width: 0;
+}
 .gallery-row-bottom img { aspect-ratio: 1 / 1; }
 
 /* Beast mode section */

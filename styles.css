@@ -159,6 +159,7 @@ img { max-width: 100%; display: block; }
 .hero .eyebrow {
   color: var(--green);
   font-size: 22px;
+  font-weight: 700;
   margin-bottom: 18px;
 }
 .hero h1 { font-size: 64px; margin-bottom: 6px; }

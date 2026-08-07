@@ -277,9 +277,9 @@ img { max-width: 100%; display: block; }
 .faq-item .a { color: var(--gray); font-size: 15px; }
 
 /* Team */
-.team-section { padding: 90px 32px; }
+.team-section { padding: 90px 32px; text-align: center; }
 .team-section h2 { font-size: 40px; }
-.team-section .sub { color: var(--gray); font-size: 17px; max-width: 640px; margin-top: 16px; }
+.team-section .sub { color: var(--gray); font-size: 17px; max-width: 640px; margin: 16px auto 0; }
 .section-label { color: var(--green-dark); font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 16px; }
 .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 32px; }
 .team-card img { width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: 12px; }

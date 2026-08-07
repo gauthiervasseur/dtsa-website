@@ -16,7 +16,7 @@
 :root {
   --mint: #eff9f1;
   --green: #5fbf75;
-  --green-dark: #429457;
+  --green-dark: #3a8449;
   --ink: #14170f;
   --gray: #6f7570;
   --dark: #171a16;
@@ -178,7 +178,7 @@ img { max-width: 100%; display: block; }
 
 /* Stats */
 .stats-section { padding: 90px 32px; text-align: center; }
-.stats-section h2 { font-size: 40px; max-width: 820px; margin: 0 auto 56px; }
+.stats-section h2:not(.section-label):not(.cohort-label) { font-size: 40px; max-width: 820px; margin: 0 auto 56px; }
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -243,7 +243,7 @@ img { max-width: 100%; display: block; }
 .criteria-list .dot { color: var(--green); flex-shrink: 0; }
 
 .fit-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 56px; }
-.fit-columns h3 { font-size: 22px; margin-bottom: 20px; }
+.fit-columns h3 { font-size: 22px; font-weight: 500; margin-bottom: 20px; }
 .fit-columns ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
 .fit-columns li { font-size: 15px; color: rgba(255,255,255,0.78); padding-left: 22px; position: relative; }
 .fit-columns li::before { content: "•"; position: absolute; left: 0; color: var(--green); }
@@ -252,21 +252,21 @@ img { max-width: 100%; display: block; }
 .cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 48px; }
 .card { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 32px; }
 .card-dark { background: var(--dark-card); border: 1px solid var(--border-dark); border-radius: 14px; padding: 32px; }
-.card h3, .card-dark h3 { font-size: 21px; margin-bottom: 12px; }
+.card h3, .card-dark h3 { font-size: 21px; font-weight: 500; margin-bottom: 12px; }
 .card p, .card-dark p { color: var(--gray); font-size: 15px; }
 .card-dark p { color: rgba(255,255,255,0.7); }
 
 /* Program phases */
 .phase-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 48px; }
 .phase .tag { color: var(--green-dark); font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px; }
-.phase h3 { font-size: 22px; margin-bottom: 4px; }
+.phase h3 { font-size: 22px; font-weight: 500; margin-bottom: 4px; }
 .phase .duration { color: var(--gray); font-size: 14px; margin-bottom: 12px; }
 .phase p { color: var(--gray); font-size: 15px; }
 
 /* Fees */
 .fees-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 40px; }
 .fee-card { border: 1px solid var(--border); border-radius: 14px; padding: 28px; }
-.fee-card h4 { font-size: 18px; margin-bottom: 10px; }
+.fee-card h4 { font-size: 18px; font-weight: 500; margin-bottom: 10px; }
 .fee-card p { color: var(--gray); font-size: 15px; }
 .fee-card .amount { font-size: 28px; margin: 8px 0; }
 
@@ -314,7 +314,7 @@ img { max-width: 100%; display: block; }
 }
 .logo-card .cname { font-size: 15px; font-weight: 500; }
 .logo-card .ctag { font-size: 13px; color: var(--gray); }
-.cohort-label { font-size: 22px; margin: 56px 0 0; }
+.cohort-label { font-size: 22px; font-weight: 500; margin: 56px 0 0; }
 .cohort-label:first-of-type { margin-top: 40px; }
 
 /* CTA band */
@@ -325,7 +325,7 @@ img { max-width: 100%; display: block; }
 /* Footer */
 .site-footer { background: var(--mint); padding: 60px 32px 32px; }
 .footer-grid { display: flex; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
-.footer-col h4 { font-size: 14px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gray); margin-bottom: 14px; }
+.footer-col h4 { font-size: 14px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gray); margin-bottom: 14px; }
 .footer-col a, .footer-col p { display: block; font-size: 15px; margin-bottom: 8px; }
 .footer-col a:hover { color: var(--green-dark); }
 .footer-bottom {
@@ -406,7 +406,7 @@ img { max-width: 100%; display: block; }
 
   .hero { padding: 70px 24px 60px; }
   .stats-section, .dark-section, .team-section { padding: 56px 24px; }
-  .stats-section h2, .dark-section h2, .team-section h2 { font-size: 30px; }
+  .stats-section h2:not(.section-label):not(.cohort-label), .dark-section h2, .team-section h2 { font-size: 30px; }
   .page-hero { padding: 48px 24px 32px; }
   .page-hero h1 { font-size: 34px; }
   .cta-band { padding: 48px 24px; }
@@ -419,7 +419,7 @@ img { max-width: 100%; display: block; }
   .site-header .wrap { padding-left: 20px; padding-right: 20px; }
   .hero h1 { font-size: 32px; }
   .hero .eyebrow { font-size: 18px; }
-  .stats-section h2, .dark-section h2, .team-section h2 { font-size: 26px; }
+  .stats-section h2:not(.section-label):not(.cohort-label), .dark-section h2, .team-section h2 { font-size: 26px; }
   .page-hero h1 { font-size: 28px; }
   .cta-band h2 { font-size: 22px; }
   .team-grid, .logo-grid { grid-template-columns: 1fr; }

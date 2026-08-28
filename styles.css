@@ -277,9 +277,10 @@ img { max-width: 100%; display: block; }
 
 /* Program phases */
 .phase-layout { display: grid; grid-template-columns: 340px 1fr; gap: 48px; margin-top: 48px; text-align: left; }
-.phase-photo { width: 100%; height: 100%; min-height: 320px; object-fit: cover; border-radius: 14px; }
+.phase-photo-wrap { border-radius: 14px; overflow: hidden; }
+.phase-photo { width: 100%; height: 100%; object-fit: cover; display: block; }
 .phase-list { display: flex; flex-direction: column; }
-.phase { display: grid; grid-template-columns: 240px 1fr; gap: 32px; padding: 28px 0; border-top: 1px solid var(--border); }
+.phase { display: grid; grid-template-columns: 240px 1fr; gap: 32px; padding: 28px 0; border-top: 1px solid var(--border); align-items: center; }
 .phase:last-child { border-bottom: 1px solid var(--border); }
 .phase .tag { color: var(--green-dark); font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px; }
 .phase h3 { font-size: 22px; font-weight: 500; margin-bottom: 4px; }
@@ -453,8 +454,8 @@ img { max-width: 100%; display: block; }
   .gallery-grid, .gallery-row-bottom { grid-template-columns: 1fr; }
   .hero h1 { font-size: 40px; }
   .phase-layout { grid-template-columns: 1fr; }
-  .phase-photo { height: 220px; min-height: 0; margin-bottom: 8px; }
-  .phase { grid-template-columns: 1fr; gap: 8px; }
+  .phase-photo-wrap { height: 220px; margin-bottom: 8px; }
+  .phase { grid-template-columns: 1fr; gap: 8px; align-items: start; }
   .phase .duration { margin-bottom: 4px; }
   .footer-grid { flex-direction: column; gap: 24px; }
 

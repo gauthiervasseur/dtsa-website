@@ -195,6 +195,11 @@ img { max-width: 100%; display: block; }
 .dark-section h2 { font-size: 40px; margin-bottom: 16px; }
 .dark-section .sub { color: rgba(255,255,255,0.7); font-size: 17px; max-width: 640px; }
 
+/* Light section wrapper (dark-section's white-background counterpart) */
+.beast-section { background: var(--white); color: var(--ink); padding: 90px 32px; }
+.beast-section h2 { font-size: 40px; margin-bottom: 16px; }
+.beast-section .sub { color: var(--gray); font-size: 17px; max-width: 640px; }
+
 .video-row {
   display: flex;
   justify-content: space-between;
@@ -239,15 +244,16 @@ img { max-width: 100%; display: block; }
 
 /* Beast mode section */
 .criteria-list { list-style: none; margin: 32px 0 0; padding: 0; display: grid; gap: 18px; }
-.criteria-list li { display: flex; gap: 12px; font-size: 16px; color: rgba(255,255,255,0.85); }
-.criteria-list b { color: var(--white); font-weight: 500; }
-.criteria-list .dot { color: var(--green); flex-shrink: 0; }
+.criteria-list li { display: flex; gap: 12px; font-size: 16px; color: var(--gray); }
+.criteria-list b { color: var(--ink); font-weight: 500; }
+.criteria-list .dot { color: var(--green-dark); flex-shrink: 0; }
 
 .fit-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 56px; }
+.fit-card { border: 1px solid var(--border); border-radius: 14px; padding: 32px; }
 .fit-columns h3 { font-size: 22px; font-weight: 500; margin-bottom: 20px; }
 .fit-columns ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
-.fit-columns li { font-size: 15px; color: rgba(255,255,255,0.78); padding-left: 22px; position: relative; }
-.fit-columns li::before { content: "•"; position: absolute; left: 0; color: var(--green); }
+.fit-columns li { font-size: 15px; color: var(--gray); padding-left: 22px; position: relative; }
+.fit-columns li::before { content: "•"; position: absolute; left: 0; color: var(--green-dark); }
 
 /* Cards grid (What You Gain / What Makes Different) */
 .cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 48px; }
@@ -429,8 +435,8 @@ img { max-width: 100%; display: block; }
   .footer-grid { flex-direction: column; gap: 24px; }
 
   .hero { padding: 70px 24px 60px; }
-  .stats-section, .dark-section, .team-section { padding: 56px 24px; }
-  .stats-section h2:not(.section-label):not(.cohort-label), .dark-section h2, .team-section h2 { font-size: 30px; }
+  .stats-section, .dark-section, .beast-section, .team-section { padding: 56px 24px; }
+  .stats-section h2:not(.section-label):not(.cohort-label), .dark-section h2, .beast-section h2, .team-section h2 { font-size: 30px; }
   .page-hero { padding: 48px 24px 32px; }
   .page-hero h1 { font-size: 34px; }
   .cta-band { padding: 48px 24px; }
@@ -443,7 +449,7 @@ img { max-width: 100%; display: block; }
   .site-header .wrap { padding-left: 20px; padding-right: 20px; }
   .hero h1 { font-size: 32px; }
   .hero .eyebrow { font-size: 18px; }
-  .stats-section h2:not(.section-label):not(.cohort-label), .dark-section h2, .team-section h2 { font-size: 26px; }
+  .stats-section h2:not(.section-label):not(.cohort-label), .dark-section h2, .beast-section h2, .team-section h2 { font-size: 26px; }
   .page-hero h1 { font-size: 28px; }
   .cta-band h2 { font-size: 22px; }
   .team-grid, .logo-grid { grid-template-columns: 1fr; }

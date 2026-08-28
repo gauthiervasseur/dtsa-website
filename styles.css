@@ -358,6 +358,10 @@ img { max-width: 100%; display: block; }
 .cohort-label { font-size: 22px; font-weight: 500; margin: 56px 0 0; }
 .cohort-label:first-of-type { margin-top: 40px; }
 
+/* Partner logos */
+.partner-logos { display: flex; align-items: center; justify-content: center; gap: 56px; flex-wrap: wrap; margin-top: 40px; }
+.partner-logos img { height: 46px; width: auto; }
+
 /* CTA band */
 .cta-band { background: var(--mint); padding: 70px 32px; text-align: center; }
 .cta-band h2 { font-size: 34px; }

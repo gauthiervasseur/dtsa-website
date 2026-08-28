@@ -255,6 +255,17 @@ img { max-width: 100%; display: block; }
 .fit-columns li { font-size: 15px; color: var(--gray); padding-left: 22px; position: relative; }
 .fit-columns li::before { content: "•"; position: absolute; left: 0; color: var(--green-dark); }
 
+.domain-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+.domain-tag {
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: var(--mint);
+  border: 1px solid var(--border);
+  color: var(--green-dark);
+  font-size: 14px;
+  font-weight: 500;
+}
+
 /* Cards grid (What You Gain / What Makes Different) */
 .cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 48px; }
 .card { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 32px; }

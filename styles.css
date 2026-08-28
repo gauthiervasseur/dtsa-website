@@ -287,12 +287,13 @@ img { max-width: 100%; display: block; }
 .phase .duration { color: var(--gray); font-size: 14px; }
 .phase p { color: var(--gray); font-size: 15px; margin: 0; }
 
-/* Fees */
-.fees-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 40px; }
-.fee-card { border: 1px solid var(--border); border-radius: 14px; padding: 28px; }
-.fee-card h4 { font-size: 18px; font-weight: 500; margin-bottom: 10px; }
-.fee-card p { color: var(--gray); font-size: 15px; }
-.fee-card .amount { font-size: 28px; margin: 8px 0; }
+/* Who Should Attend & Program Fees */
+.attend-fees-layout { text-align: left; margin-top: 40px; }
+.fee-rows { display: flex; flex-direction: column; margin-top: 20px; }
+.fee-row { display: grid; grid-template-columns: 240px 1fr; gap: 32px; padding: 24px 0; border-top: 1px solid var(--border); align-items: center; }
+.fee-row:last-child { border-bottom: 1px solid var(--border); }
+.fee-row h4 { font-size: 18px; font-weight: 500; margin: 0; }
+.fee-row p { color: var(--gray); font-size: 15px; margin: 0; }
 
 /* FAQ */
 .faq-list { margin-top: 40px; display: grid; gap: 0; text-align: left; }
@@ -448,7 +449,7 @@ img { max-width: 100%; display: block; }
   .main-nav li { border-top: 1px solid var(--border); }
   .main-nav a { display: block; padding: 14px 2px; font-size: 16px; }
 
-  .stats-grid, .cards-grid, .fit-columns, .fees-grid { grid-template-columns: 1fr; }
+  .stats-grid, .cards-grid, .fit-columns { grid-template-columns: 1fr; }
   .team-grid { grid-template-columns: repeat(2, 1fr); }
   .logo-grid { grid-template-columns: repeat(2, 1fr); }
   .gallery-grid, .gallery-row-bottom { grid-template-columns: 1fr; }
@@ -457,6 +458,7 @@ img { max-width: 100%; display: block; }
   .phase-photo-wrap { height: 220px; margin-bottom: 8px; }
   .phase { grid-template-columns: 1fr; gap: 8px; align-items: start; }
   .phase .duration { margin-bottom: 4px; }
+  .fee-row { grid-template-columns: 1fr; gap: 4px; align-items: start; }
   .footer-grid { flex-direction: column; gap: 24px; }
 
   .hero { padding: 70px 24px 60px; }

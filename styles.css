@@ -273,7 +273,7 @@ img { max-width: 100%; display: block; }
 .card h3, .card-dark h3 { font-size: 21px; font-weight: 500; margin-bottom: 12px; }
 .card p, .card-dark p { color: var(--gray); font-size: 15px; }
 .card-dark p { color: rgba(255,255,255,0.7); }
-.card .tag { color: var(--green-dark); font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px; }
+.card .tag { color: var(--green-dark); font-size: 36px; font-weight: 500; margin-bottom: 12px; }
 
 /* Program phases */
 .phase-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 48px; }

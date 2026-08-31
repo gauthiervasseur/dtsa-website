@@ -51,7 +51,7 @@ h1, h2, h3, h4 {
 
 p { margin: 0; line-height: 1.5; overflow-wrap: break-word; }
 a { color: inherit; text-decoration: none; }
-img { max-width: 100%; display: block; }
+img { max-width: 100%; height: auto; display: block; }
 
 .wrap {
   max-width: 1180px;
@@ -72,7 +72,7 @@ img { max-width: 100%; display: block; }
   justify-content: space-between;
   height: 84px;
 }
-.logo img { height: 22px; }
+.logo img { height: 22px; width: auto; }
 .main-nav {
   display: flex;
   gap: 36px;

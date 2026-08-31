@@ -364,14 +364,20 @@ img { max-width: 100%; height: auto; display: block; }
   margin-top: 36px;
 }
 .logo-card {
-  border: 1px solid var(--border);
+  border: 1px solid rgba(95, 191, 117, 0.35);
   border-radius: 12px;
   padding: 22px 20px;
   display: flex;
   flex-direction: column;
   gap: 14px;
   align-items: flex-start;
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 0.2s ease;
 }
+a.logo-card:hover { border-color: var(--green-dark); }
+.mint-section .logo-card { border-color: var(--green-dark); }
+.mint-section a.logo-card:hover { border-color: var(--ink); }
 .logo-card img {
   width: 100%;
   height: 56px;
@@ -382,7 +388,7 @@ img { max-width: 100%; height: auto; display: block; }
   box-sizing: border-box;
 }
 .logo-card .cname { font-size: 15px; font-weight: 500; }
-.logo-card .ctag { font-size: 13px; color: var(--gray); }
+.logo-card .ctag { font-size: 13px; color: var(--green-dark); font-weight: 500; }
 .cohort-label { font-size: 22px; font-weight: 500; margin: 56px 0 0; }
 .cohort-label:first-of-type { margin-top: 40px; }
 
@@ -424,6 +430,18 @@ img { max-width: 100%; height: auto; display: block; }
 .page-hero .section-label { text-align: center; }
 .page-hero h1 { font-size: 46px; }
 .page-hero p { color: var(--gray); font-size: 17px; max-width: 640px; margin: 16px auto 0; }
+
+/* Alumni page hero photo */
+.alumni-hero {
+  background: linear-gradient(rgba(10,20,14,0.55), rgba(10,20,14,0.68)), url("./images/pXbtxjGYFY7zHiKwQMCrr6eKI-hero.jpg") center 70% / cover no-repeat;
+  padding: 120px 32px 32px;
+  min-height: 460px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.alumni-hero h1 { color: var(--green); }
+.alumni-hero p { color: rgba(255,255,255,0.85); }
 
 /* Contact form */
 .contact-section { padding: 20px 32px 100px; }

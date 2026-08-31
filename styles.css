@@ -190,6 +190,9 @@ img { max-width: 100%; display: block; }
 .stat .num { font-size: 48px; font-weight: 500; }
 .stat .label { color: var(--gray); font-size: 16px; margin-top: 8px; }
 
+/* Mint section modifier (applies to stats-section/team-section instances) */
+.mint-section { background: var(--mint); }
+
 /* Dark section wrapper */
 .dark-section { background: var(--dark); color: var(--white); padding: 90px 32px; }
 .dark-section h2 { font-size: 40px; margin-bottom: 16px; }
@@ -330,11 +333,28 @@ img { max-width: 100%; display: block; }
 .team-section .sub { color: var(--gray); font-size: 17px; max-width: 640px; margin: 16px auto 0; }
 .section-label { color: var(--green-dark); font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 16px; }
 .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 32px; }
-.team-card { display: block; color: inherit; text-decoration: none; }
+.team-card { position: relative; display: block; color: inherit; text-decoration: none; }
 .team-card img { width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: 12px; }
 .team-card .name { margin-top: 14px; font-size: 18px; font-weight: 500; }
 .team-card .role { color: var(--gray); font-size: 14px; margin-top: 2px; }
 .team-card:hover .name { color: var(--green-dark); }
+.team-card .linkedin-icon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(20, 23, 15, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.team-card .linkedin-icon svg { width: 16px; height: 16px; fill: var(--white); }
+.team-card:hover .linkedin-icon { opacity: 1; transform: translateY(0); }
 
 /* Alumni logos grid */
 .logo-grid {
@@ -375,6 +395,12 @@ img { max-width: 100%; display: block; }
 .cta-band { background: var(--mint); padding: 70px 32px; text-align: center; }
 .cta-band h2 { font-size: 34px; }
 .cta-band .residency { color: var(--green-dark); font-size: 15px; margin: 14px 0 26px; }
+
+/* CTA band green modifier (Pre-register for Cohort 3) */
+.cta-band-green { background: #5fbf75; color: #3a3f39; padding: 44px 32px; }
+.cta-band-green h2 { font-size: 28px; }
+.cta-band-green .residency { color: #3a3f39; margin: 10px 0 20px; }
+.cta-band-green .btn-primary { background: var(--white); color: var(--green-dark); }
 
 /* Footer */
 .site-footer { background: var(--dark); color: var(--white); padding: 60px 32px 32px; }
@@ -471,6 +497,8 @@ img { max-width: 100%; display: block; }
   .page-hero h1 { font-size: 34px; }
   .cta-band { padding: 48px 24px; }
   .cta-band h2 { font-size: 26px; }
+  .cta-band-green { padding: 36px 24px; }
+  .cta-band-green h2 { font-size: 24px; }
   .video-row { align-items: flex-start; }
 }
 
@@ -482,6 +510,7 @@ img { max-width: 100%; display: block; }
   .stats-section h2:not(.section-label):not(.cohort-label), .dark-section h2, .beast-section h2, .team-section h2 { font-size: 26px; }
   .page-hero h1 { font-size: 28px; }
   .cta-band h2 { font-size: 22px; }
+  .cta-band-green h2 { font-size: 21px; }
   .team-grid, .logo-grid { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; gap: 10px; align-items: flex-start; }
 }

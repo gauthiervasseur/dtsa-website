@@ -459,8 +459,16 @@ a.logo-card:hover { border-color: var(--green-dark); }
 .contact-hero p { color: rgba(255,255,255,0.85); }
 
 /* Contact form */
-.contact-section { padding: 20px 32px 100px; }
-.contact-card { max-width: 640px; margin: 0 auto; }
+.contact-section { padding: 70px 32px 100px; background: var(--mint); }
+.contact-card {
+  max-width: 640px;
+  margin: 0 auto;
+  background: var(--white);
+  border: 1px solid rgba(95, 191, 117, 0.35);
+  border-radius: 14px;
+  padding: 40px;
+}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 .form-field { margin-bottom: 20px; }
 .form-field label { display: block; font-size: 14px; margin-bottom: 6px; color: var(--gray); }
 .form-field input, .form-field textarea {
@@ -522,6 +530,7 @@ a.logo-card:hover { border-color: var(--green-dark); }
   .phase .duration { margin-bottom: 4px; }
   .fee-row { grid-template-columns: 1fr; gap: 4px; align-items: start; }
   .footer-grid { flex-direction: column; gap: 24px; }
+  .form-row { grid-template-columns: 1fr; }
 
   .hero { padding: 70px 24px 60px; }
   .stats-section, .dark-section, .beast-section, .team-section { padding: 56px 24px; }

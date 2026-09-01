@@ -10,7 +10,7 @@
 
 <header class="site-header">
   <div class="wrap">
-    <a class="logo" href="./"><img src="./images/mLPfdt1UXnucnOv0Lomkl5x9o.png" alt="DTS Accelerator" width="1873" height="187"></a>
+    <a class="logo" href="./"><img src="./images/mLPfdt1UXnucnOv0Lomkl5x9o.png" alt="DTS Accelerator" width="1873" height="187"><img class="logo-hover" src="./images/mLPfdt1UXnucnOv0Lomkl5x9o-green.png" alt="" width="1873" height="187" aria-hidden="true"></a>
     <nav>
       <ul class="main-nav">
         <li><a href="./#about">About</a></li>
@@ -33,7 +33,7 @@
   </div>
 </header>
 
-<section class="page-hero">
+<section class="page-hero contact-hero">
   <h1>Accelerate Your Innovation Journey With DTSA</h1>
   <p>Have a question or want to learn more about DTSA? Send us a message and our team will get back to you shortly.</p>
 </section>
@@ -41,13 +41,25 @@
 <section class="contact-section">
   <div class="contact-card">
     <form id="contact-form" action="./thank-you.html">
-      <div class="form-field">
-        <label for="name">Name</label>
-        <input id="name" name="name" type="text" required>
+      <div class="form-row">
+        <div class="form-field">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required>
+        </div>
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required>
+        </div>
       </div>
-      <div class="form-field">
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" required>
+      <div class="form-row">
+        <div class="form-field">
+          <label for="phone">Phone Number</label>
+          <input id="phone" name="phone" type="tel" required>
+        </div>
+        <div class="form-field">
+          <label for="company">Company</label>
+          <input id="company" name="company" type="text">
+        </div>
       </div>
       <div class="form-field">
         <label for="message">Message</label>
@@ -62,7 +74,7 @@
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-col">
-        <a class="logo" href="./"><img src="./images/EmGJkQvWhCSvJWnmZBPdxjAWmII.svg" alt="DTS Accelerator" style="height:24px;margin-bottom:16px" width="1036" height="149" loading="lazy"></a>
+        <a class="logo" href="./"><img src="./images/EmGJkQvWhCSvJWnmZBPdxjAWmII.svg" alt="DTS Accelerator" style="height:24px;margin-bottom:16px" width="1036" height="149" loading="lazy"><img class="logo-hover" src="./images/footer-logo-white.svg" alt="" style="height:24px;margin-bottom:16px" width="1036" height="149" aria-hidden="true"></a>
         <p>333 Ravenswood Ave</p>
         <p>Menlo Park, CA 94025, USA</p>
         <p>+1 (650) 387-4412</p>
@@ -94,8 +106,10 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
   e.preventDefault();
   var name = document.getElementById('name').value;
   var email = document.getElementById('email').value;
+  var phone = document.getElementById('phone').value;
+  var company = document.getElementById('company').value;
   var message = document.getElementById('message').value;
-  var body = encodeURIComponent(message + "\n\nFrom: " + name + " (" + email + ")");
+  var body = encodeURIComponent(message + "\n\nFrom: " + name + " (" + email + ")" + "\nPhone: " + phone + (company ? "\nCompany: " + company : ""));
   window.location.href = "mailto:team@dts-accelerator.com?subject=Website%20enquiry&body=" + body;
   setTimeout(function () { window.location.href = "./thank-you.html"; }, 300);
 });

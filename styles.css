@@ -72,7 +72,10 @@ img { max-width: 100%; height: auto; display: block; }
   justify-content: space-between;
   height: 84px;
 }
+.logo { position: relative; display: inline-block; }
 .logo img { height: 22px; width: auto; }
+.logo .logo-hover { position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 0.2s ease; }
+.logo:hover .logo-hover { opacity: 1; }
 .main-nav {
   display: flex;
   gap: 36px;
@@ -435,13 +438,25 @@ a.logo-card:hover { border-color: var(--green-dark); }
 .alumni-hero {
   background: linear-gradient(rgba(10,20,14,0.55), rgba(10,20,14,0.68)), url("./images/pXbtxjGYFY7zHiKwQMCrr6eKI-hero.jpg") center / cover no-repeat;
   aspect-ratio: 1800 / 1198;
-  padding: 120px 32px 32px;
+  padding: 18% 32px 32px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
 .alumni-hero h1 { color: var(--green); }
 .alumni-hero p { color: rgba(255,255,255,0.85); }
+
+/* Contact page hero photo */
+.contact-hero {
+  background: linear-gradient(rgba(10,20,14,0.5), rgba(10,20,14,0.6)), url("./images/RTrVWkgZ43S3fDzfMbiRpMdtWhE.png") center / cover no-repeat;
+  aspect-ratio: 1536 / 1024;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.contact-hero h1 { color: var(--white); }
+.contact-hero p { color: rgba(255,255,255,0.85); }
 
 /* Contact form */
 .contact-section { padding: 20px 32px 100px; }

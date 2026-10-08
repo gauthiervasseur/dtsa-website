@@ -418,6 +418,35 @@ a.logo-card:hover { border-color: var(--green-dark); }
 .footer-col h4 { font-size: 14px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: rgba(255,255,255,0.55); margin-bottom: 14px; }
 .footer-col a, .footer-col p { display: block; font-size: 15px; margin-bottom: 8px; color: rgba(255,255,255,0.85); }
 .footer-col a:hover { color: var(--green); }
+.footer-newsletter { flex: 1 1 340px; max-width: 430px; }
+.footer-newsletter p { color: rgba(255,255,255,0.65); }
+.newsletter-input-row { display: flex; gap: 8px; margin-top: 16px; }
+.newsletter-input-row input {
+  min-width: 0;
+  flex: 1;
+  padding: 11px 14px;
+  border: 1px solid var(--border-dark);
+  border-radius: 999px;
+  color: var(--white);
+  background: rgba(255,255,255,0.08);
+  font: inherit;
+}
+.newsletter-input-row input::placeholder { color: rgba(255,255,255,0.5); }
+.newsletter-input-row input:focus { outline: 2px solid var(--green); outline-offset: 2px; }
+.newsletter-input-row .btn { padding: 11px 18px; }
+.newsletter-status { margin-top: 10px; font-size: 14px; }
+.newsletter-status:empty { display: none; }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
 .footer-bottom {
   border-top: 1px solid var(--border-dark);
   margin-top: 40px;
@@ -530,6 +559,8 @@ a.logo-card:hover { border-color: var(--green-dark); }
   .phase .duration { margin-bottom: 4px; }
   .fee-row { grid-template-columns: 1fr; gap: 4px; align-items: start; }
   .footer-grid { flex-direction: column; gap: 24px; }
+  .footer-newsletter { max-width: none; }
+  .newsletter-input-row { flex-direction: column; align-items: stretch; }
   .form-row { grid-template-columns: 1fr; }
 
   .hero { padding: 70px 24px 60px; }

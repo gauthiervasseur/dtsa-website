@@ -40,7 +40,7 @@
 
 <section class="contact-section">
   <div class="contact-card">
-    <form id="contact-form" action="./thank-you.html">
+    <form id="contact-form" action="https://formspree.io/f/mppqdzvg" method="POST">
       <div class="form-row">
         <div class="form-field">
           <label for="name">Ім&rsquo;я</label>
@@ -102,16 +102,26 @@
 </footer>
 
 <script>
-document.getElementById('contact-form').addEventListener('submit', function (e) {
+document.getElementById('contact-form').addEventListener('submit', async function (e) {
   e.preventDefault();
-  var name = document.getElementById('name').value;
-  var email = document.getElementById('email').value;
-  var phone = document.getElementById('phone').value;
-  var company = document.getElementById('company').value;
-  var message = document.getElementById('message').value;
-  var body = encodeURIComponent(message + "\n\nВід: " + name + " (" + email + ")" + "\nТелефон: " + phone + (company ? "\nКомпанія: " + company : ""));
-  window.location.href = "mailto:team@dts-accelerator.com?subject=Запит%20із%20сайту&body=" + body;
-  setTimeout(function () { window.location.href = "./thank-you.html"; }, 300);
+  var form = e.target;
+  var button = form.querySelector('button[type="submit"]');
+  var data = new FormData(form);
+  data.append('_subject', 'Запит із сайту');
+  data.append('form', 'Contact us');
+  button.disabled = true;
+  try {
+    var response = await fetch('https://formspree.io/f/mppqdzvg', {
+      method: 'POST',
+      headers: { Accept: 'application/json' },
+      body: data
+    });
+    if (!response.ok) throw new Error(response.statusText);
+    window.location.href = './thank-you.html';
+  } catch (error) {
+    alert('Не вдалося надіслати повідомлення. Спробуйте ще раз або напишіть нам на team@dts-accelerator.com.');
+    button.disabled = false;
+  }
 });
 </script>
 

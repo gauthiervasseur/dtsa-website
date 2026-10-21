@@ -293,6 +293,22 @@ img { max-width: 100%; height: auto; display: block; }
   .hero .hero-actions .btn-hero { padding: 18px 28px; font-size: 17px; }
 }
 
+/* Photo carousel */
+.photo-carousel-section { padding: 64px 32px; }
+.photo-carousel { max-width: 720px; margin: 0 auto; }
+.photo-carousel-track { position: relative; aspect-ratio: 3 / 2; border-radius: 14px; overflow: hidden; background: var(--mint); }
+.photo-carousel-track img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.9s ease; }
+.photo-carousel-track img.is-active { opacity: 1; }
+.photo-carousel-dots { display: flex; justify-content: center; gap: 10px; margin-top: 18px; }
+.photo-carousel-dots button { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 50%; background: var(--border); cursor: pointer; transition: background 0.3s ease, transform 0.3s ease; }
+.photo-carousel-dots button[aria-current="true"] { background: var(--green-dark); transform: scale(1.25); }
+@media (prefers-reduced-motion: reduce) {
+  .photo-carousel-track img { transition: none; }
+}
+@media (max-width: 600px) {
+  .photo-carousel-section { padding: 40px 16px; }
+}
+
 .section-intro { max-width: 680px; margin: -32px auto 0; font-size: 17px; color: var(--gray); }
 .stats-section .section-intro + .stats-grid { margin-top: 56px; }
 

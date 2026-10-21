@@ -75,4 +75,51 @@
       });
     });
   });
+
+  document.querySelectorAll(".photo-carousel").forEach((carousel) => {
+    const slides = Array.from(carousel.querySelectorAll(".photo-carousel-track img"));
+    const dotsWrap = carousel.querySelector(".photo-carousel-dots");
+    if (slides.length < 2 || !dotsWrap) return;
+
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let current = 0;
+    let timer = null;
+
+    const dots = slides.map((slide, index) => {
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.setAttribute("aria-label", `Show photo ${index + 1} of ${slides.length}`);
+      dot.addEventListener("click", () => {
+        show(index);
+        start();
+      });
+      dotsWrap.appendChild(dot);
+      return dot;
+    });
+
+    const show = (index) => {
+      slides[current].classList.remove("is-active");
+      dots[current].removeAttribute("aria-current");
+      current = (index + slides.length) % slides.length;
+      slides[current].classList.add("is-active");
+      dots[current].setAttribute("aria-current", "true");
+    };
+
+    const stop = () => {
+      clearInterval(timer);
+      timer = null;
+    };
+
+    const start = () => {
+      stop();
+      if (!reduceMotion) timer = setInterval(() => show(current + 1), 5000);
+    };
+
+    show(0);
+    start();
+
+    carousel.addEventListener("mouseenter", stop);
+    carousel.addEventListener("mouseleave", start);
+    document.addEventListener("visibilitychange", () => (document.hidden ? stop() : start()));
+  });
 })();

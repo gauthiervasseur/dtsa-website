@@ -655,3 +655,8 @@ a.logo-card:hover { border-color: var(--green-dark); }
 .curriculum-section .sub { margin: 0 auto; }
 .curriculum-section .card-dark { text-align: left; }
 .curriculum-section .card-dark h3 { color: var(--green); }
+
+/* Alumni Fund */
+.fund-section .fund-thanks { max-width: 680px; margin: 32px auto 0; font-size: 19px; color: var(--ink); }
+.fund-section .fund-grid .logo-card { border-color: var(--green-dark); background: var(--mint); }
+.fund-section .fund-grid a.logo-card:hover { border-color: var(--ink); }
